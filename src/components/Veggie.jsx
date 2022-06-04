@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import styled from "styled-components";
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css';
 import { Link } from "react-router-dom";
@@ -32,48 +31,37 @@ function Veggie() {
     return (
         <>
             <section className="page-section">
-                <Wrapper>
+                <div className="wrapper">
                     <h3>Vegitarian Picks</h3>
                     <Splide options={{
-                        perPage:4,
+                        perPage: 4,
                         arrows: false,
                         pagination: false,
                         drag: "free",
-                        gap:"5rem",
+                        gap:"1rem",
 
                     }}>
                         {veggie.map((recipe) => {
                             return(
                                 <SplideSlide key={recipe.id}>
-                                    <Card>
-                                    <Link to={'/recipe/'+ recipe.id}>
-                                        <div className="card">
-                                            <p>{recipe.title}</p>
-                                            <img src={recipe.image} alt={recipe.title}/>
-                                            <div className="gradient"></div>
-                                        </div>
+                                    <div className="box">
+                                        <Link to={'/recipe/'+ recipe.id}>
+                                            <div className="card">
+                                                <p>{recipe.title}</p>
+                                                <img src={recipe.image} alt={recipe.title}/>
+                                                <div className="gradient"></div>
+                                            </div>
                                         </Link>
-                                    </Card>
+                                    </div>
                                 </SplideSlide>
                             );
                         })}
                     </Splide>
-                </Wrapper>
+                </div>
             </section>
         </>
     )
 }
 
-
-const Wrapper = styled.div`
-    margin: 4rem 0rem;
-`;
-
-const Card = styled.div`
-    min-height: 25rem;
-    border-radius: 2rem;
-    overflow: hidden;
-    position: relative;
-`;
 
 export default Veggie

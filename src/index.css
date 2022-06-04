@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,10 +7,9 @@
     font-family: "Montserrat", sans-serif;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 body {
-    margin: 0% 10%;
+    margin: 0;
     font-family:'Roboto', 'Oxygen', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -20,7 +21,7 @@ h4 {
 }
 
 h3 {
-    margin: 2rem 0rem;
+    margin: 2rem 0rem 0rem 0rem;
     font-size: 1.5rem;
     color: rgb(54, 54, 54);
     line-height: 2.5rem;
@@ -38,7 +39,7 @@ a {
     margin: 2rem auto;
 }
 
-.categories>a {
+.categories > a {
     width: 5rem;
     height: 5rem;
     text-align: center;
@@ -62,22 +63,38 @@ a:hover {
 }
 
 
-.categories>a>h4 {
+.categories > a > h4 {
     color: #fff;
     font-size: 0.6em;
     margin: 2px 0px 0px 0px;
 }
 
-.categories>a>svg {
+.categories > a > svg {
     height: 2rem;
     width: 2rem;
     color: #fff;
 }
 
 
+
 /* --------- HOMEPAGE ---------- */
-.page-section .card img {
-    border-radius: 2rem;
+.page-section {
+    margin: 0 1rem;
+}
+
+.wrapper {
+    margin: 4rem 0rem;
+}
+
+.box {
+    min-height: 16rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.box .card img {
+    border-radius: 2px;
     position: absolute;
     left: 0;
     width: auto;
@@ -85,23 +102,23 @@ a:hover {
     object-fit: cover;
 }
 
-.page-section .card p {
+.box .card p {
+    width: 95%;
+    height: 40%;
     position: absolute;
     z-index: 10;
     left: 50%;
     bottom: 0%;
-    transform: translate(-50%, 0%);
-    color: white;
-    width: 100%;
-    text-align: center;
-    font-weight: 600;
-    font-size: 1rem;
-    height: 40%;
     display: flex;
     justify-content: center;
-    align-items: center;
-}
-
+    align-items: top;
+    transform: translate(-50%, 0%);
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+}    
+    
 .gradient {
     z-index: 3;
     position: absolute;
@@ -111,6 +128,7 @@ a:hover {
 }
 
 
+
 /* --------- CUISINE PAGE ---------- */
 .grid {
     display: grid;
@@ -118,24 +136,24 @@ a:hover {
     grid-gap: 3rem;
 }
 
-.cuisine>h2 {
+.cuisine > h2 {
     text-transform: capitalize;
 }
 
-.cuisine>.grid>.card img {
+.cuisine > .grid > .card img {
     width: 100%;
     border-radius: 2rem;
 }
 
-.cuisine>.grid>.card a {
+.cuisine > .grid > .card a {
     text-decoration: none;
 }
 
-.cuisine>.grid>.card h4 {
+.cuisine > .grid > .card h4 {
     text-align: center;
 }
 
-.cuisine>.grid>.card p {
+.cuisine > .grid > .card p {
    color: #000;
 }
 
