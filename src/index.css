@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+body {
+    margin: 0% 10%;
+    font-family:'Roboto', 'Oxygen', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h4 {
+    font-size: 1rem;
+    color: rgb(54, 54, 54);
+}
+
+h3 {
+    margin: 2rem 0rem;
+    font-size: 1.5rem;
+    color: rgb(54, 54, 54);
+    line-height: 2.5rem;
+}
+
+a {
+    color: rgb(54, 54, 54);
+}
+
+/* ---------- NAV ---------- */
+.categories {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem auto;
+}
+
+.categories>a {
+    width: 5rem;
+    height: 5rem;
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 50%;
+    background: linear-gradient(35deg, #494949, #313131);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px;
+}
+
+a.active {
+    background: linear-gradient(to right, #ffa962, #d64b21);
+}
+
+a:hover {
+    background: linear-gradient(to right, #ffa962, #d64b21);
+}
+
+
+.categories>a>h4 {
+    color: #fff;
+    font-size: 0.6em;
+    margin: 2px 0px 0px 0px;
+}
+
+.categories>a>svg {
+    height: 2rem;
+    width: 2rem;
+    color: #fff;
+}
+
+
+/* --------- HOMEPAGE ---------- */
+.page-section .card img {
+    border-radius: 2rem;
+    position: absolute;
+    left: 0;
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+}
+
+.page-section .card p {
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    bottom: 0%;
+    transform: translate(-50%, 0%);
+    color: white;
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gradient {
+    z-index: 3;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .6));
+}
+
+
+/* --------- CUISINE PAGE ---------- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-gap: 3rem;
+}
+
+.cuisine>h2 {
+    text-transform: capitalize;
+}
+
+.cuisine>.grid>.card img {
+    width: 100%;
+    border-radius: 2rem;
+}
+
+.cuisine>.grid>.card a {
+    text-decoration: none;
+}
+
+.cuisine>.grid>.card h4 {
+    text-align: center;
+}
+
+.cuisine>.grid>.card p {
+   color: #000;
+}
+
+/* ---------- DETAILS PAGE ---------- */
+
+.detail-wrapper {
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+    display: flex;
+}
+
+.detail-wrapper .active {
+    background: linear-gradient(35deg, #494949, #313131);
+    color: #fff;
+}
+
+.detail-wrapper h2 {
+    margin-bottom: 2rem;
+}
+.detail-wrapper ul {
+    margin-top: 2rem;
+}
+
+.detail-wrapper li {
+    font-size: 1.2rem;
+    line-height: 2.5rem;
+}
+
+.detail-wrapper button {
+    padding: 1rem 2rem;
+    color: #313131;
+    background-color: #fff;
+    border: solid black 2px;
+    margin-right: 2rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.detail-wrapper .info {
+    margin-left: 10rem;
+}
