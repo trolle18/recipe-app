@@ -1,78 +1,223 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+/* ---------- ROOTS ---------- */
+:root {
+    --ff-logo: 'Righteous', cursive;
+    --ff-main: 'Quicksand', 'Roboto', 'Raleway', 'Montserrat', sans-serif;
 
+    --fs-p: .875em;
+    --fs-p-s: .625em;  
+    --fs-p-l: 1em;
+
+    --fs-h-s: 1.250em;
+    --fs-h-m: 1.375em;
+    --fs-h-l: 1.5em;
+
+    --clr-black: #252525;
+    --clr-white: #f2f2f2;
+    --clr-l-grey: #dadada;
+    --clr-d-grey: #484848;
+
+    --clr-orange: #e8812d; /* #ffa962; */
+    --clr-red-orange: #d64b21;
+
+    --clr-1: #4c54aa;
+    --clr-2: #508d46;
+    --clr-3: #f28f3f; /* #f28f3f */
+    --clr-4: #da4112;
+} /* e89042 429236 */
+
+
+
+/* ---------- IMPORTS ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+
+
+/* ---------- GENERAL ---------- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Montserrat", sans-serif;
 }
-
 
 body {
     margin: 0;
-    font-family:'Roboto', 'Oxygen', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: var(--ff-main);
+    font-size: 16px;
+    color: var(--clr-black);
+}
+
+p {
+    font-size: var(--fs-p);
 }
 
 h4 {
-    font-size: 1rem;
-    color: rgb(54, 54, 54);
+    font-size: var(--fs-h-s);
 }
 
 h3 {
     margin: 2rem 0rem 0rem 0rem;
-    font-size: 1.5rem;
-    color: rgb(54, 54, 54);
-    line-height: 2.5rem;
+    font-size: var(--fs-h-m);
+}
+
+h2 {
+    font-size: var(--fs-h-m);
+}
+
+h1 {
+    font-size: var(--fs-h-l);
 }
 
 a {
     color: rgb(54, 54, 54);
 }
 
+
+
 /* ---------- NAV ---------- */
-.categories {
-    width: 60%;
-    display: flex;
-    justify-content: space-between;
-    margin: 2rem auto;
+.nav {
+    padding: 4rem 0rem;
 }
 
-.categories > a {
-    width: 5rem;
-    height: 5rem;
-    text-align: center;
+.logo {
+    display: flex;
+    justify-content: center;
     align-items: center;
     text-decoration: none;
-    border-radius: 50%;
-    background: linear-gradient(35deg, #494949, #313131);
-    cursor: pointer;
+}
+
+.logo h1 {
+    font-style: normal;
+    font-weight: 400;
+    font-family: var(--ff-logo)
+}
+
+.logo > svg {
+    height: 3rem;
+    width: auto;
+}
+
+
+/* ----- Searchbar ----- */
+.searchbar-cntr {
+    margin: 0rem auto;
+    width: 60%;   
+}
+
+.searchbar {
+    width: 100%;
+    position: relative;
+}
+
+.searchbar input {
+    width: 100%;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 1.5em;
+    outline: none;
+    background-color: var(--clr-black);
+    font-size: 1.5rem;
+    color: var(--clr-white);
+}
+
+.searchbar svg {
+    top: 50%;
+    left: 0%;
+    position: absolute;
+    transform: translate(100%, -50%);
+    color: var(--clr-white);
+}
+
+
+/* ----- Categories ----- */
+.categories {
+    width: 60%;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.category-link {
+    width: 5rem;
+    height: 5rem;
+    padding: 0px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0px;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--clr-black);
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none; 
+    transition: 0.2s ease-in; 
 }
 
-a.active {
-    background: linear-gradient(to right, #ffa962, #d64b21);
+.category-link:hover {
+    background-color: var(--clr-red-orange);
 }
 
-a:hover {
-    background: linear-gradient(to right, #ffa962, #d64b21);
+.category-link.active {
+    background-color: var(--clr-red-orange);
 }
 
-
-.categories > a > h4 {
-    color: #fff;
-    font-size: 0.6em;
+.category-link > h4 {
     margin: 2px 0px 0px 0px;
+    color: var(--clr-white);
+    font-size: 0.6em;
 }
 
-.categories > a > svg {
-    height: 2rem;
-    width: 2rem;
-    color: #fff;
+.category-link > svg {
+    height: 1.8rem;
+    width: auto;
+    color: var(--clr-white);
+}
+
+
+/* test */
+.category-test {
+    width: 5rem;
+    height: 5rem;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--clr-black);
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none; 
+    transition: 0.2s ease-in; 
+}
+
+.category-test:nth-child(1) {
+    background-color: var(--clr-1);
+}
+
+.category-test:nth-child(2) {
+    background-color: var(--clr-2);
+}
+
+.category-test:nth-child(3) {
+    background-color: var(--clr-3);
+}
+
+.category-test:nth-child(4) {
+    background-color: var(--clr-4);
+}
+
+.category-test > h4 {
+    margin: 2px 0px 0px 0px;
+    color: var(--clr-white);
+    font-size: 0.6em;
+}
+
+.category-test > svg {
+    height: 1.8rem;
+    width: auto;
+    color: var(--clr-white);
 }
 
 
@@ -94,36 +239,36 @@ a:hover {
 }
 
 .box .card img {
-    border-radius: 2px;
-    position: absolute;
-    left: 0;
-    width: auto;
     height: 100%;
+    width: auto;
+    left: 0;
+    position: absolute;
     object-fit: cover;
+    border-radius: 2px;
 }
 
 .box .card p {
     width: 95%;
     height: 40%;
-    position: absolute;
-    z-index: 10;
     left: 50%;
     bottom: 0%;
+    z-index: 10;
+    position: absolute;    
     display: flex;
     justify-content: center;
     align-items: top;
-    transform: translate(-50%, 0%);
-    color: white;
+    color: var(--clr-white);
     text-align: center;
     font-weight: 600;
     font-size: 1.2rem;
+    transform: translate(-50%, 0%);
 }    
     
 .gradient {
-    z-index: 3;
-    position: absolute;
-    width: 100%;
     height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 3;
     background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .6));
 }
 
@@ -153,12 +298,9 @@ a:hover {
     text-align: center;
 }
 
-.cuisine > .grid > .card p {
-   color: #000;
-}
+
 
 /* ---------- DETAILS PAGE ---------- */
-
 .detail-wrapper {
     margin-top: 10rem;
     margin-bottom: 5rem;
@@ -167,7 +309,7 @@ a:hover {
 
 .detail-wrapper .active {
     background: linear-gradient(35deg, #494949, #313131);
-    color: #fff;
+    color: var(--clr-white);
 }
 
 .detail-wrapper h2 {
@@ -183,13 +325,13 @@ a:hover {
 }
 
 .detail-wrapper button {
-    padding: 1rem 2rem;
-    color: #313131;
-    background-color: #fff;
-    border: solid black 2px;
     margin-right: 2rem;
-    font-weight: 600;
+    padding: 1rem 2rem;
+    border: solid black 2px;
     cursor: pointer;
+    background-color: var(--clr-white);
+    color: #313131;
+    font-weight: 600;
 }
 
 .detail-wrapper .info {

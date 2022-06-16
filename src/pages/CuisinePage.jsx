@@ -11,7 +11,8 @@ export default function CuisinePage() {
     const getCuisine = async (name) => {
         const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}`);
         const recipes = await data.json();
-
+        
+        localStorage.setItem('cuisine', JSON.stringify(data.recipes));
         setCuisine(recipes.results);
     };
 

@@ -20,9 +20,9 @@ function Veggie() {
             const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9&tags=vegetarian`);
             const data = await api.json();
             
-            localStorage.setItem('veggie', JSON.stringify(data.recipes));
-            setVeggie(data.recipes)
-            console.log(data)
+        localStorage.setItem('veggie', JSON.stringify(data.recipes));
+        setVeggie(data.recipes);
+        console.log(data);
     }
 
 
@@ -32,9 +32,9 @@ function Veggie() {
         <>
             <section className="page-section">
                 <div className="wrapper">
-                    <h3>Vegitarian Picks</h3>
+                    <h3>Vegitarian</h3>
                     <Splide options={{
-                        perPage: 4,
+                        perPage: 4.2,
                         arrows: false,
                         pagination: false,
                         drag: "free",
