@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/react-splide/css';
 import { Link } from "react-router-dom";
+import { IoTimerOutline } from "react-icons/io5"
 
 
-function Popular() {
+export default function Popular() {
     const [popular, setPopular] = useState([]);
 
     useEffect(() => {
@@ -33,22 +34,27 @@ function Popular() {
                 <div className="wrapper">
                     <h3>Popular</h3>
                     <Splide options={{
-                        perPage: 4.2,
+                        perPage: 4,
                         arrows: false,
                         pagination: false,
                         drag: "free",
-                        gap:"1rem",
-
+                        gap:"1em",
                     }}>
                         {popular.map((recipe) => {
                             return(
                                 <SplideSlide key={recipe.id}>
                                     <div className="box">
                                         <Link to={'/recipe/'+ recipe.id}>
-                                            <div className="card">
-                                                <p>{recipe.title}</p>
+                                            <div className="card">                                                
                                                 <img src={recipe.image} alt={recipe.title}/>
-                                                <div className="gradient"></div>
+                                                <div className="card-text">
+                                                    <h4>{recipe.title}</h4>
+                                                    <div className="card-text-details">
+                                                        <p><IoTimerOutline/> {recipe.readyInMinutes} min</p>
+                                                        <p>Servings: {recipe.servings}</p>
+                                                        <p>{recipe.dishTypes}</p>                                                       
+                                                    </div>
+                                                </div>
                                             </div>
                                         </Link>
                                     </div>
@@ -60,19 +66,4 @@ function Popular() {
             </section>
         </>
     )
-}
-
-
-// const Wrapper = styled.div`
-//     margin: 4rem 0rem;
-// `;
-
-// const Card = styled.div`
-//     min-height: 25rem;
-//     border-radius: 2rem;
-//     overflow: hidden;
-//     position: relative;
-// `;
-
-
-export default Popular;
+};

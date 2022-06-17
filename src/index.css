@@ -18,17 +18,16 @@
 
     --clr-orange: #e8812d; /* #ffa962; */
     --clr-red-orange: #d64b21;
+    --clr-blue: #4c54aa;
+    --clr-green: #508d46;
 
-    --clr-1: #4c54aa;
-    --clr-2: #508d46;
-    --clr-3: #f28f3f; /* #f28f3f */
-    --clr-4: #da4112;
-} /* e89042 429236 */
+} 
 
 
 
 /* ---------- IMPORTS ---------- */
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 
 
@@ -51,23 +50,28 @@ body {
 
 p {
     font-size: var(--fs-p);
+    font-weight: 400;
 }
 
 h4 {
     font-size: var(--fs-h-s);
+    font-weight: 600;
 }
 
 h3 {
-    margin: 2rem 0rem 0rem 0rem;
+    margin: 2rem 0rem .5rem 0rem;
     font-size: var(--fs-h-m);
+    font-weight: 800;
 }
 
 h2 {
     font-size: var(--fs-h-m);
+    font-weight: 800;
 }
 
 h1 {
     font-size: var(--fs-h-l);
+    font-weight: 800;
 }
 
 a {
@@ -232,54 +236,8 @@ a {
 }
 
 
-/* test */
-.category-test {
-    width: 5rem;
-    height: 5rem;
-    padding: 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    background-color: var(--clr-black);
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none; 
-    transition: 0.2s ease-in; 
-}
 
-.category-test:nth-child(1) {
-    background-color: var(--clr-1);
-}
-
-.category-test:nth-child(2) {
-    background-color: var(--clr-2);
-}
-
-.category-test:nth-child(3) {
-    background-color: var(--clr-3);
-}
-
-.category-test:nth-child(4) {
-    background-color: var(--clr-4);
-}
-
-.category-test > h4 {
-    margin: 2px 0px 0px 0px;
-    color: var(--clr-white);
-    font-size: 0.6em;
-}
-
-.category-test > svg {
-    height: 1.8rem;
-    width: auto;
-    color: var(--clr-white);
-}
-
-
-
-/* --------- HOMEPAGE ---------- */
+/* --------- PAGE ---------- */
 .page-section {
     margin: 0 1rem;
 }
@@ -289,46 +247,59 @@ a {
 }
 
 .box {
-    min-height: 16rem;
+    min-height: 20rem;
     position: relative;
     overflow: hidden;
     border-radius: 5px;
 }
 
 .box .card img {
-    height: 100%;
-    width: auto;
+    height: 50%;
+    width: 100%;
     left: 0;
     position: absolute;
     object-fit: cover;
     border-radius: 2px;
-}
+} 
 
-.box .card p {
-    width: 95%;
-    height: 40%;
-    left: 50%;
-    bottom: 0%;
-    z-index: 10;
-    position: absolute;    
-    display: flex;
-    justify-content: center;
-    align-items: top;
-    color: var(--clr-white);
-    text-align: center;
-    font-weight: 600;
-    font-size: 1.2rem;
-    transform: translate(-50%, 0%);
-}    
-    
-.gradient {
-    height: 100%;
+.card-text {
+    height: 50%;
     width: 100%;
+    padding: .2em .5em .5em .5em;
+    bottom: 0;
     position: absolute;
-    z-index: 3;
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .6));
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    background-color: var(--clr-l-grey);
 }
 
+.card-text h4 {
+    width: 95%;
+    margin: 0em 0em .2em 0em;
+    display: flex;
+    color: var(--clr-black);
+    font-weight: 600;
+    font-size: var(--fs-p-l);
+}    
+
+.card-text-details {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-text-details p::first-letter{
+    text-transform: uppercase;
+}
+
+.card-text-details p:nth-child(3) {
+    bottom: 0%;
+    margin-top: auto;
+}
+
+    
 
 
 /* --------- CUISINE PAGE ---------- */
