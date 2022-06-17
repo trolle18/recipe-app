@@ -2,24 +2,32 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from "react-router-dom";
 
-function SearchedPage() {
+export default function SearchedPage() {
     const [searchedRecipes, setSearchedRecipes] = useState([]);
     let params = useParams();
 
     const getSearched = async (name) => {
-        const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${name}`);
-        const recipes = await data.json();
+        const check = localStorage.getItem(name);
+        if (check) {
+            setSearchedRecipes(JSON.parse(check));
+        } else {
+            const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${name}&number=10`);
+            const recipes = await data.json();
 
-        setSearchedRecipes(recipes.results);
+            localStorage.setItem(name, JSON.stringify(recipes.results));
+            setSearchedRecipes(recipes.results);
+        }
     };
+
 
     useEffect(() => {
         getSearched(params.search)
     }, [params.search]);
 
+
     return (
         <>
-        <section className="cuisine">
+            <section className="cuisine">
                 <h2>Search result for "{params.search}"</h2>
                 <section className="grid">
                     {searchedRecipes.map((item) => {
@@ -36,8 +44,4 @@ function SearchedPage() {
             </section>
         </>
     )
-}
-
-
-
-export default SearchedPage
+};

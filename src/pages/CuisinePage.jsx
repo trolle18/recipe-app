@@ -9,11 +9,16 @@ export default function CuisinePage() {
     let params = useParams();
 
     const getCuisine = async (name) => {
-        const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}`);
-        const recipes = await data.json();
-        
-        localStorage.setItem('cuisine', JSON.stringify(data.recipes));
-        setCuisine(recipes.results);
+        const check = localStorage.getItem(name);
+        if (check) {
+            setCuisine(JSON.parse(check));
+        } else {
+            const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}&number=10`);
+            const recipes = await data.json();
+            
+            localStorage.setItem(name, JSON.stringify(recipes.results));
+            setCuisine(recipes.results);
+        }
     };
 
     useEffect(() => {
@@ -23,8 +28,8 @@ export default function CuisinePage() {
 
     return (
         <>
-            <section className="cuisine">
-                <h2>Cuisine - {params.type}</h2>
+            <section className="cuisine page-section">
+                <h2>{params.type}</h2>
                 <motion.div className="grid" 
                     animate={{opacity: 1}}
                     initial={{opacity: 0}}
