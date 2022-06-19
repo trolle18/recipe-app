@@ -13,9 +13,9 @@ export default function HomePage() {
                 exit={ {opacity: 0} }
                 transition={ {duration: 0.5} }>
         
-                <MainCourses/>
                 <Popular/>
                 <Veggie/>
+                <MainCourses/>
             </motion.div>
         </>
     )

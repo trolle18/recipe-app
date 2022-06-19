@@ -34,17 +34,9 @@ export default function MainCourses() {
             <section className="page-section">
                 <div className="wrapper">
                     <h3>Main Courses</h3>
-                    {/* <Splide options={{
-                        perPage: 4,
-                        arrows: false,
-                        pagination: false,
-                        drag: "free",
-                        gap:"1em",
-                    }}> */}
                     <div className="grid-cntr">
                         {mainCourses.map((recipe) => {
                             return(
-                                // <SplideSlide key={recipe.id}>
                                     <div className="box" key={recipe.id}>
                                         <Link to={'/recipe/'+ recipe.id}>
                                             <div className="card">                                                
@@ -60,10 +52,8 @@ export default function MainCourses() {
                                             </div>
                                         </Link>
                                     </div>
-                                // </SplideSlide>
                             );
                         })}
-                    {/* </Splide> */}
                     </div>
                 </div>
             </section>
