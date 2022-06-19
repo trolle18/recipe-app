@@ -7,28 +7,6 @@ export default function Categories() {
 
     return (
         <>
-            {/* <section className='categories'>
-                <NavLink to={'/'} className="category-test">
-                    <FaPizzaSlice/>
-                    <h4>test</h4>
-                </NavLink>
-
-                <NavLink to={'/'} className="category-test">
-                    <FaHamburger/>
-                    <h4>test</h4>
-                </NavLink>
-
-                <NavLink to={'/'} className="category-test">
-                    <GiNoodles/>
-                    <h4>test</h4>
-                </NavLink>
-
-                <NavLink to={'/'} className="category-test">
-                    <GiChopsticks/>
-                    <h4>test</h4>
-                </NavLink>
-            </section> */}
-
             <section className='categories'>
                 <NavLink to={'/cuisine/italian'} className="category-link">
                     <FaPizzaSlice/>
