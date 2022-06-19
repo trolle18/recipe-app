@@ -18,7 +18,7 @@ export default function MainCourses() {
         if (check) {
             setMainCourses(JSON.parse(check));
         } else {
-            const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9`);
+            const api = await fetch(`https://api.spoonacular.com/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9&tags=dinner`);
             const data = await api.json();
             
             localStorage.setItem('dinner', JSON.stringify(data.recipes));
@@ -45,7 +45,7 @@ export default function MainCourses() {
                         {mainCourses.map((recipe) => {
                             return(
                                 // <SplideSlide key={recipe.id}>
-                                    <div className="box">
+                                    <div className="box" key={recipe.id}>
                                         <Link to={'/recipe/'+ recipe.id}>
                                             <div className="card">                                                
                                                 <img src={recipe.image} alt={recipe.title}/>
