@@ -4,7 +4,7 @@ import '@splidejs/react-splide/css';
 import { Link } from "react-router-dom";
 import { IoTimerOutline } from "react-icons/io5"
 
-function Veggie() {
+export default function Veggie() {
     const [veggie, setVeggie] = useState([]);
 
     useEffect(() => {
@@ -66,7 +66,4 @@ function Veggie() {
             </section>
         </>
     )
-}
-
-
-export default Veggie
+};

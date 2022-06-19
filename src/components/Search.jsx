@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
-function Search() {
+export default function Search() {
     const [input, setInput] = useState("");
     const navigate = useNavigate();
 
@@ -22,8 +22,4 @@ function Search() {
             </div>
         </form>
     )
-}
-
-
-
-export default Search
+};
