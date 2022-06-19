@@ -1,4 +1,4 @@
-import Veggie from "../components/Veggie";
+import Vegetarian from "../components/Vegetarian";
 import Popular from "../components/Popular";
 import { motion } from "framer-motion";
 import MainCourses from "../components/MainCourses";
@@ -14,7 +14,7 @@ export default function HomePage() {
                 transition={ {duration: 0.5} }>
         
                 <Popular/>
-                <Veggie/>
+                <Vegetarian/>
                 <MainCourses/>
             </motion.div>
         </>

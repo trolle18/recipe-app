@@ -307,6 +307,23 @@ a {
     margin-top: auto;
 }
 
+.fav-btn {
+    height: 2em;
+    width: 2em;
+    border-radius: 100%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-white);
+}
+
+.fav-btn > svg {
+    height: 1.4em;
+    width: 1.4em;
+    color: var(--clr-red-orange);
+}
+
     
 
 

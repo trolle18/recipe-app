@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { Splide, SplideSlide } from '@splidejs/react-splide'
+import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import { Link } from "react-router-dom";
-import { IoTimerOutline } from "react-icons/io5"
+import { IoTimerOutline, IoHeart } from "react-icons/io5";
 
 
 export default function Popular() {
@@ -13,7 +13,7 @@ export default function Popular() {
     },[]);
 
 
-    const getPopular = async () => {
+    const getPopular = async() => {
         const check = localStorage.getItem('popular');
         if (check) {
             setPopular(JSON.parse(check));
@@ -26,6 +26,36 @@ export default function Popular() {
             console.log(data);
         }
     }
+
+    // const handleFavorites = async() => {
+    //     const check = localStorage.getItem('favorites');
+    //     if (check) {
+    //         setPopular(JSON.parse(check));
+    // } else {
+    //     localStorage.setItem('favorites', JSON.stringify(data.recipes));
+    //     setPopular(data.recipes);
+    //     console.log(data);
+    // }
+    // }
+
+    // const addToFavourites = (id) => {
+    //     if (this.state.faveIconActive) {
+    //         this.setState({ faveIconActive: false });
+
+    //         let favorites = JSON.parse(localStorage.getItem("favorites"));
+    //         let index = favorites.findIndex(productId => productId === id);
+    //         favorites.splice(index, 1);
+    //         localStorage.setItem("favorites", JSON.stringify(favorites));
+    //     } else {
+    //         this.setState({
+    //             faveIconActive: true,
+    //         });
+
+    //         let favorites = JSON.parse(localStorage.getItem("favorites"));
+    //         favorites.push(id);
+    //         localStorage.setItem("favorites", JSON.stringify(favorites));
+    //     }
+    // };
 
 
 
@@ -53,7 +83,7 @@ export default function Popular() {
                                                     <div className="card-text-details">
                                                         <p><IoTimerOutline/> {recipe.readyInMinutes} min</p>
                                                         <p>Servings: {recipe.servings}</p>
-                                                        <p>{recipe.dishTypes}</p>                                                       
+                                                        <button className="fav-btn" ><IoHeart/></button>
                                                     </div>
                                                 </div>
                                             </div>
