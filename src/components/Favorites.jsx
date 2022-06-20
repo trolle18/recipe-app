@@ -27,9 +27,8 @@ export default function Favorites({recipes}) {
         if (!favorites.includes(id)) setFavorites(favorites.concat(id));
         localStorage.setItem('favorites', JSON.stringify(id));
         console.log(id);
-      };
-
-      // this one does the exact opposite, it removes the favorite recipe id's
+    };
+    
     const removeFavorites = id => {
         let index = favorites.indexOf(id);
         console.log(index);
@@ -39,6 +38,8 @@ export default function Favorites({recipes}) {
     };
 
     let findFavorites = recipes.filter(recipe => favorites.includes(recipe.id));
+
+
 
     return (
         <>

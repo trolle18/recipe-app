@@ -6,6 +6,7 @@ export default function Search() {
     const [input, setInput] = useState("");
     const navigate = useNavigate();
 
+    // Handles searches  - renders on SearchedPage
     const handleSubmit = (e) => {
         e.preventDefault();
         navigate('/searched/'+input)

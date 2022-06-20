@@ -11,20 +11,24 @@ export default function Vegetarian() {
         getVeggie();
     },[]);
 
-    const getVeggie = async () => {
 
-        const check = localStorage.getItem('veggie');
+    // Fetch vegetarian recipes from API
+    const getVeggie = async () => {
+        const check = localStorage.getItem('veggie');   // Checks if recipes is saved in local storage
         if (check) {
             setVeggie(JSON.parse(check));
-        } else {
+        } else {    // If not, get from API and save to local storage 
             const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9&tags=vegetarian`);
             const data = await api.json();
-            
-            localStorage.setItem('veggie', JSON.stringify(data.recipes));
+            localStorage.setItem('veggie', JSON.stringify(data.recipes));  // Recipes are saved to local storage, as Spoonaculars API calls are limited
             setVeggie(data.recipes);
             console.log(data);
+
+            
         }
     }
+
+
 
     return (
         <>

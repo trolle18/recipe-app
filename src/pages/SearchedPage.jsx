@@ -6,15 +6,15 @@ export default function SearchedPage() {
     const [searchedRecipes, setSearchedRecipes] = useState([]);
     let params = useParams();
 
+    // Fetch searched recipes from API
     const getSearched = async (name) => {
-        const check = localStorage.getItem(name);
+        const check = localStorage.getItem(name);  // Checks if recipes is saved in local storage
         if (check) {
             setSearchedRecipes(JSON.parse(check));
-        } else {
+        } else {  // If not, get from API and save to local storage   
             const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${name}&number=10`);
             const recipes = await data.json();
-
-            localStorage.setItem(name, JSON.stringify(recipes.results));
+            localStorage.setItem(name, JSON.stringify(recipes.results));  // Recipes are saved to local storage, as Spoonaculars API calls are limited
             setSearchedRecipes(recipes.results);
         }
     };
@@ -23,6 +23,7 @@ export default function SearchedPage() {
     useEffect(() => {
         getSearched(params.search)
     }, [params.search]);
+
 
 
     return (

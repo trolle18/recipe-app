@@ -8,22 +8,23 @@ export default function CuisinePage() {
     const [cuisine, setCuisine] = useState([]);
     let params = useParams();
 
+    // Fetch cuisine from API
     const getCuisine = async (name) => {
-        const check = localStorage.getItem(name);
+        const check = localStorage.getItem(name);  // Checks if recipes is saved in local storage
         if (check) {
             setCuisine(JSON.parse(check));
-        } else {
+        } else {  // If not, get from API and save to local storage   
             const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}&number=10`);
             const recipes = await data.json();
-            
-            localStorage.setItem(name, JSON.stringify(recipes.results));
+            localStorage.setItem(name, JSON.stringify(recipes.results));  // Recipes are saved to local storage, as Spoonaculars API calls are limited
             setCuisine(recipes.results);
         }
     };
-
+    
     useEffect(() => {
         getCuisine(params.type)
     }, [params.type]);
+
 
 
     return (
