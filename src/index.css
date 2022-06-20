@@ -310,12 +310,15 @@ a {
 .fav-btn {
     height: 2em;
     width: 2em;
+    margin: .5em;
     border-radius: 100%;
     border: none;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--clr-white);
+    cursor: pointer;
+    z-index: 20;
 }
 
 .fav-btn > svg {

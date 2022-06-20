@@ -1,7 +1,7 @@
 import Vegetarian from "../components/Vegetarian";
 import Popular from "../components/Popular";
 import { motion } from "framer-motion";
-import MainCourses from "../components/MainCourses";
+// import MainCourses from "../components/MainCourses";
 
 export default function HomePage() {
 
@@ -15,7 +15,7 @@ export default function HomePage() {
         
                 <Popular/>
                 <Vegetarian/>
-                <MainCourses/>
+                {/* <MainCourses/> */}
             </motion.div>
         </>
     )

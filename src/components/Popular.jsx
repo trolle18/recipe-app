@@ -2,16 +2,16 @@ import { useEffect, useState } from "react";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import { Link } from "react-router-dom";
-import { IoTimerOutline, IoHeart } from "react-icons/io5";
+import { IoTimerOutline, IoHeart, IoHeartOutline } from "react-icons/io5";
 
 
 export default function Popular() {
     const [popular, setPopular] = useState([]);
+    const [favorites, setFavorites] = useState([]);
 
     useEffect(() => {
         getPopular();
     },[]);
-
 
     const getPopular = async() => {
         const check = localStorage.getItem('popular');
@@ -27,36 +27,20 @@ export default function Popular() {
         }
     }
 
-    // const handleFavorites = async() => {
-    //     const check = localStorage.getItem('favorites');
-    //     if (check) {
-    //         setPopular(JSON.parse(check));
-    // } else {
-    //     localStorage.setItem('favorites', JSON.stringify(data.recipes));
-    //     setPopular(data.recipes);
-    //     console.log(data);
-    // }
-    // }
 
-    // const addToFavourites = (id) => {
-    //     if (this.state.faveIconActive) {
-    //         this.setState({ faveIconActive: false });
 
-    //         let favorites = JSON.parse(localStorage.getItem("favorites"));
-    //         let index = favorites.findIndex(productId => productId === id);
-    //         favorites.splice(index, 1);
-    //         localStorage.setItem("favorites", JSON.stringify(favorites));
-    //     } else {
-    //         this.setState({
-    //             faveIconActive: true,
-    //         });
 
-    //         let favorites = JSON.parse(localStorage.getItem("favorites"));
-    //         favorites.push(id);
-    //         localStorage.setItem("favorites", JSON.stringify(favorites));
-    //     }
+    // const addToFavorites = id => {
+    //     if (!favorites.includes(id)) setFavorites(favorites.concat(id));
+    //     localStorage.setItem('favorites', JSON.stringify(id));
+    //     console.log(id);
     // };
 
+    // const removeFavorites = id => {
+    //     if (!favorites.includes(id)) setFavorites(favorites.concat(id));
+    //     localStorage.setItem('favorites', JSON.stringify(id));
+    //     console.log(id);
+    // };
 
 
     return (
@@ -75,7 +59,7 @@ export default function Popular() {
                             return(
                                 <SplideSlide key={recipe.id}>
                                     <div className="box">
-                                        <Link to={'/recipe/'+ recipe.id}>
+                                        {/* <Link to={'/recipe/'+ recipe.id}> */}
                                             <div className="card">                                                
                                                 <img src={recipe.image} alt={recipe.title}/>
                                                 <div className="card-text">
@@ -83,11 +67,13 @@ export default function Popular() {
                                                     <div className="card-text-details">
                                                         <p><IoTimerOutline/> {recipe.readyInMinutes} min</p>
                                                         <p>Servings: {recipe.servings}</p>
-                                                        <button className="fav-btn" ><IoHeart/></button>
+                                                        <Link to={'/recipe/'+ recipe.id}>Read more ...</Link>
                                                     </div>
+                                                    {/* <button className="fav-btn" onClick={() => addToFavorites(recipe.id)}><IoHeart/></button>
+                                                    <button className="fav-btn" onClick={() => removeFavorites(recipe.id)}><IoHeartOutline/></button> */}
                                                 </div>
                                             </div>
-                                        </Link>
+                                        {/* </Link> */}
                                     </div>
                                 </SplideSlide>
                             );
