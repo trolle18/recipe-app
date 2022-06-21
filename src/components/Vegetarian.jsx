@@ -23,8 +23,6 @@ export default function Vegetarian() {
             localStorage.setItem('veggie', JSON.stringify(data.recipes));  // Recipes are saved to local storage, as Spoonaculars API calls are limited
             setVeggie(data.recipes);
             console.log(data);
-
-            
         }
     }
 
@@ -38,9 +36,10 @@ export default function Vegetarian() {
                     <Splide options={{
                         perPage: 4,
                         arrows: false,
-                        pagination: false,
+                        pagination: true,
                         drag: "free",
                         gap:"1em",
+                        rewind: true,
                     }}>
                         {veggie.map((recipe) => {
                             return(

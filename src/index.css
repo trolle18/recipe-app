@@ -14,6 +14,8 @@
     --clr-black: #252525;
     --clr-white: #f2f2f2;
     --clr-l-grey: #dadada;
+    --clr-m-grey: #a9a9a9;
+    --clr-md-grey: #717171;
     --clr-d-grey: #484848;
 
     --clr-orange: #e8812d; /* #ffa962; */
@@ -238,8 +240,22 @@ a {
 
 
 /* --------- PAGE ---------- */
+.page {
+    margin: 0rem 0rem 10rem 0rem;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
 .page-section {
+    /* width: 80%; */
     margin: 0 1rem;
+}
+
+.page-section-right {
+    /* width: 10%; */
+    margin: 0 1rem 0 .25rem;
+    float: right;
+    border: solid blue 1px;
 }
 
 .wrapper {
@@ -258,7 +274,6 @@ a {
     position: relative;
     overflow: hidden;
     border-radius: 5px;
-    /* box-shadow: 1px 1px 2px rgba(0, 0, 0, .2); */
 }
 
 .box .card img {
@@ -308,10 +323,11 @@ a {
 }
 
 .fav-btn {
-    height: 2em;
-    width: 2em;
+    height: 2.5em;
+    width: 2.5em;
     margin: .5em;
-    border-radius: 100%;
+    padding: .5em;
+    border-radius: 2em;
     border: none;
     display: flex;
     justify-content: center;
@@ -322,9 +338,49 @@ a {
 }
 
 .fav-btn > svg {
-    height: 1.4em;
-    width: 1.4em;
+    height: 1.5em;
+    width: 1.5em;
     color: var(--clr-red-orange);
+}
+
+/* ----- Splide carousel arrows ----- */
+#splide01 > div.splide__arrows.splide__arrows--ltr > button.splide__arrow {
+    background-color: transparent;
+}
+#splide01 > div.splide__arrows.splide__arrows--ltr > button.splide__arrow.splide__arrow--next {
+    top: 50%;
+    right: -2.4em;
+}
+#splide01 > div.splide__arrows.splide__arrows--ltr > button.splide__arrow.splide__arrow--prev {
+    top: 50%;
+    left: -2.4em;
+}
+
+#splide02 > div.splide__arrows.splide__arrows--ltr > button.splide__arrow {
+    background-color: transparent;
+}
+#splide02 > div.splide__arrows.splide__arrows--ltr > button.splide__arrow.splide__arrow--next {
+    top: 50%;
+    right: -2.4em;
+}
+#splide02 > div.splide__arrows.splide__arrows--ltr > button.splide__arrow.splide__arrow--prev {
+    top: 50%;
+    left: -2.4em;
+}
+
+/* ----- Splide pagniation buttons ----- */
+ul.splide__pagination.splide__pagination--ltr {
+    bottom: -1.5em;
+}
+
+button.splide__pagination__page {
+    padding: 0px 2px;
+    background-color: var(--clr-m-grey);
+}
+
+button.splide__pagination__page.is-active {
+    background-color: var(--clr-m-grey);
+    transform:scale(1.5)
 }
 
     

@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
-import { Link } from "react-router-dom";
+import '../index.css'
 import { IoTimerOutline, IoHeart } from "react-icons/io5";
 
 
 export default function Popular() {
     const [popular, setPopular] = useState([]);
-    // const [favorites, setFavorites] = useState([]);
+    const [favorites, setFavorites] = useState([]);
 
     useEffect(() => {
         getPopular();
@@ -29,11 +30,11 @@ export default function Popular() {
     }
 
     // Save favorite recipes to local storage
-    // const addToFavorites = id => {
-    //     if (!favorites.includes(id)) setFavorites(favorites.concat(id));
-    //     localStorage.setItem('favorites', JSON.stringify(id));
-    //     console.log(id);
-    // };
+    const addToFavorites = id => {
+        if (!favorites.includes(id)) setFavorites(favorites.concat(id));
+        localStorage.setItem('favorites', JSON.stringify(id));
+        console.log(favorites);
+    };
 
     // const removeFavorites = id => {
     //     if (!favorites.includes(id)) setFavorites(favorites.concat(id));
@@ -51,9 +52,10 @@ export default function Popular() {
                     <Splide options={{
                         perPage: 4,
                         arrows: false,
-                        pagination: false,
-                        drag: "free",
+                        pagination: true,
+                        drag: true,
                         gap:"1em",
+                        rewind: true,
                     }}>
                         {popular.map((recipe) => {
                             return(
@@ -68,10 +70,7 @@ export default function Popular() {
                                                         <p><IoTimerOutline/> {recipe.readyInMinutes} min</p>
                                                         <p>Servings: {recipe.servings}</p>
                                                     </div>
-                                                    <button 
-                                                        className="fav-btn" 
-                                                        //  onClick={() => addToFavorites(recipe.id)}
-                                                    >
+                                                    <button className="fav-btn" onClick={() => addToFavorites(recipe.id)}>
                                                         <IoHeart/>
                                                     </button>
                                                 </div>
