@@ -1,0 +1,95 @@
+.nav-mob-links {
+    width: 65px;
+    right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0 0 2px 2px;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    vertical-align: middle;
+
+    
+    &__menu-btn {
+        height: 20px;
+        width: 20px;
+        margin: auto 0;
+        border: solid red 1px;
+        text-transform: uppercase;
+        background-color: transparent;
+        cursor: pointer;
+        position: relative;
+        
+        svg {
+            height: 100%;
+            width: 20px;
+            stroke-width: 1px;
+            stroke-linecap: round;
+            stroke: $clr_black;
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            :first-child {
+                position: absolute;
+                left: 0;
+                transform: rotate(0deg);
+                transition: .25s;           
+            }
+          
+            :nth-child(2) {
+                position: absolute;
+                left: 0;
+                opacity: 1;
+                transform: translateX(0px);
+                transition: .25s;
+            }
+            
+            :nth-child(3) {
+                position: absolute;
+                transform: rotate(0deg);
+                transition: .25s;
+            }
+        }
+    }
+
+    &__dropdown {
+        border: none;
+        width: inherit;
+        padding: 0px 0px 0px 2px;
+        top: 40px;
+        background-color: $clr_white;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        column-gap: 10px;
+
+        a {
+            padding-bottom: 10px;
+            font-family: $ff_main;
+            font-size: $fs_p;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $clr_black;
+            transition: ease-in .02s;
+
+            &:hover {
+                color: $clr_orange;
+            }
+        }                
+    }    
+    
+    &__dropdown.show {
+        display: block;
+    }
+
+    &__dropdown.hidden {
+        display: none;
+    }
+}
+@media (min-width: 600px) {
+    .nav-mob-links {
+        display: none;
+    }
+}

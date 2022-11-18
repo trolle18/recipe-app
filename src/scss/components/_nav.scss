@@ -12,6 +12,7 @@
         left: 0;
         position: absolute;
         background: linear-gradient(rgba(0, 0, 0, 0) 80%, $clr_white 100%);
+        box-shadow: rgb(242, 242, 242) 10px 0 0 10px;
     }
     
     .header-img {
@@ -20,7 +21,17 @@
         background: url("../../assets/or-hakim-7NHvPdiUBpM-unsplash.jpg") no-repeat;
         background-position: top;
         background-size: cover;
-        filter: brightness(80%) contrast(110%);
+        filter: brightness(78%) contrast(110%);
+        
+        &::before {
+            content: "";
+            height: 100%;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            box-shadow: rgb(242, 242, 242) 10px 0 0 10px;
+        }
     }
 }
 
