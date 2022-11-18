@@ -1,0 +1,28 @@
+// Colors
+$clr_true_black: #000000;
+$clr_black: #252525;
+$clr_white: #f2f2f2;
+$clr_l_grey: #dadada;
+$clr_m_grey: #a9a9a9;
+$clr_md_grey: #717171;
+$clr_d_grey: #484848;
+$clr_orange: #e8812d; /* #ffa962; */
+$clr_red-orange: #d64b21;
+$clr_blue: #4c54aa;
+$clr_green: #508d46;
+
+// Font-families
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+$ff_logo: 'Righteous', cursive;
+$ff_main: 'Quicksand', 'Roboto', 'Raleway', 'Montserrat', sans-serif;
+
+// Font-sizes
+$fs_p: .875em;
+$fs_p_small: .625em;  
+$fs_p_large: 1em;
+
+$fs_h_small: 1.250em;
+$fs_h_medium: 1.375em;
+$fs_h_large: 1.5em;

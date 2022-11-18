@@ -1,0 +1,30 @@
+/* ----- Searchbar ----- */
+
+.searchbar-cntr {
+    margin: 0rem auto;
+    width: 100%;   
+
+    .searchbar {
+        width: 100%;
+        position: relative;   
+        
+        svg {
+            top: 50%;
+            left: 0%;
+            position: absolute;
+            transform: translate(100%, -50%);
+            color: $clr_white;
+        }
+        
+        input {
+            width: 100%;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 1.5em;
+            outline: none;
+            background-color: $clr_black;
+            font-size: 1.5rem;
+            color: $clr_white;
+        }
+    }
+}

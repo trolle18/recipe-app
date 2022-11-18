@@ -1,0 +1,53 @@
+.box {
+    min-height: 20rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+
+    .card {
+        img {
+            height: 50%;
+            width: 100%;
+            left: 0;
+            position: absolute;
+            object-fit: cover;
+            border-radius: 2px;
+        } 
+
+        .card-text {
+            height: 50%;
+            width: 100%;
+            padding: .2em .5em .5em .5em;
+            bottom: 0;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            background-color: $clr_l_grey;
+            
+            h4 {
+                width: 95%;
+                margin: 0em 0em .2em 0em;
+                display: flex;
+                color: $clr_black;
+                font-weight: 600;
+                font-size: $fs_p_large;
+            }    
+            
+            .card-text-details {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+
+                p::first-letter{
+                    text-transform: uppercase;
+                }
+                
+                p:nth-child(3) {
+                    bottom: 0%;
+                    margin-top: auto;
+                }
+            }
+        }
+    }
+}

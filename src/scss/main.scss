@@ -1,0 +1,23 @@
+// STYLE IMPORTS
+
+// Abstracts
+@import 'abstracts/breakpoints';
+@import 'abstracts/variables';
+
+// Base
+@import 'base/resets';
+@import 'base/typography';
+
+// Components
+@import 'components/buttons';
+@import 'components/recipeSlide';
+@import 'components/categories';
+@import 'components/nav';
+@import 'components/search';
+@import 'components/splide';
+
+// Layouts
+@import 'layouts/grid';
+@import 'layouts/page';
+@import 'layouts/wrapper';
+

@@ -1,7 +1,7 @@
 import Vegetarian from "../components/Vegetarian";
 import Popular from "../components/Popular";
 import { motion } from "framer-motion";
-import Favorites from "../components/Favorites";
+// import Favorites from "../components/Favorites";
 
 export default function HomePage() {
 

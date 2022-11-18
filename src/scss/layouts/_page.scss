@@ -1,0 +1,16 @@
+/* --------- PAGE ---------- */
+.page {
+    margin: 0rem 0rem 10rem 0rem;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.page-section {
+    margin: 0 1rem;
+}
+
+.page-section-right {
+    margin: 0 1rem 0 .25rem;
+    float: right;
+    border: solid blue 1px;
+}

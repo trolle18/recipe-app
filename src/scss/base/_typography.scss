@@ -1,0 +1,29 @@
+p {
+    font-size: $fs_p;
+    font-weight: 400;
+}
+
+h4 {
+    font-size: $fs_h_small;
+    font-weight: 600;
+}
+
+h3 {
+    margin: 2rem 0rem .5rem 0rem;
+    font-size: $fs_h_medium;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: $fs_h_medium;
+    font-weight: 800;
+}
+
+h1 {
+    font-size:  $fs_h_large;
+    font-weight: 800;
+}
+
+a {
+    color: rgb(54, 54, 54);
+}

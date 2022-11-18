@@ -1,0 +1,43 @@
+/* ----- Categories ----- */
+.categories {
+    width: 100%;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: space-between;
+
+    .category-link {
+        width: 5rem;
+        height: 5rem;
+        padding: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: $clr_black;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none; 
+        transition: .18s ease-in;
+        
+        &:hover {
+            background-color: $clr_red-orange;
+        }
+
+        .active {
+            background-color: $clr_red-orange;
+        }
+
+        h4 {
+            margin: 2px 0px 0px 0px;
+            color: $clr_white;
+            font-size: 0.6em;
+        }
+
+        svg {
+            height: 1.8rem;
+            width: auto;
+            color: $clr_white;
+        }
+    }
+}

@@ -1,0 +1,56 @@
+/* --------- Grid ---------- */
+.grid-cntr {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 1em;
+    column-gap: 1em;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-gap: 3rem;
+}
+
+.cuisine {
+    h2 {
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        grid-gap: 3rem;
+
+        .slide-cntr {
+            &__inner-cntr {
+                img {
+                    width: 100%;
+                    border-radius: 2rem;
+                }
+    
+                a {
+                    text-decoration: none;
+                }
+    
+                h4 {
+                    text-align: center;
+                }
+            }
+        }
+
+        .card {
+            img {
+                width: 100%;
+                border-radius: 2rem;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            h4 {
+                text-align: center;
+            }
+        }
+    }
+}
