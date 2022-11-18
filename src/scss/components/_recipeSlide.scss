@@ -1,17 +1,40 @@
 .box {
     min-height: 20rem;
+    margin: 1em .25em;
     position: relative;
     overflow: hidden;
+    z-index: 100;
     border-radius: 5px;
+    box-shadow: rgb(0, 0, 0, .08) 0px 0px 0.125rem 2px;
+    transition: ease-in-out .2s;
+
+    &:hover {
+        box-shadow: rgb(0, 0, 0, .09) 0px 0px 0.175rem 4px;
+        
+        .card {
+            img {
+                height: 55%;
+                width: 100%;
+                top: -2.5%;
+                left: 0;
+                position: absolute;
+                object-fit: cover;
+                border-radius: 2px;
+            } 
+        }
+    }
 
     .card {
+
         img {
             height: 50%;
             width: 100%;
+            top: 0;
             left: 0;
             position: absolute;
             object-fit: cover;
             border-radius: 2px;
+            transition: ease-in-out .2s;
         } 
 
         .card-text {
@@ -22,7 +45,7 @@
             position: absolute;
             display: flex;
             flex-direction: column;
-            background-color: $clr_l_grey;
+            background-color: $clr_white;
             
             h4 {
                 width: 95%;

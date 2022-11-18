@@ -1,30 +1,34 @@
 /* ----- Splide carousel arrows ----- */
-#splide01 > div.splide__arrows.splide__arrows--ltr > button.splide__arrow {
-    background-color: transparent;
+.splide__arrows {
+    .splide__arrows--ltr {
+        button.splide__arrow {
+            background-color: transparent;
+        }
+    }
 }
-#splide01 > div.splide__arrows.splide__arrows--ltr > button.splide__arrow.splide__arrow--next {
-    top: 50%;
-    right: -2.4em;
-}
-#splide01 > div.splide__arrows.splide__arrows--ltr > button.splide__arrow.splide__arrow--prev {
-    top: 50%;
-    left: -2.4em;
+.splide__arrows.splide__arrows--ltr {
+    display: flex;
+    flex-direction: row;
+ 
+
+    button.splide__arrow {
+        // height: 1em;
+        // width: 1em;
+        margin: 5px 0 0 0;
+        top: 0%;
+        background-color: transparent;
+    }
+    button.splide__arrow.splide__arrow--next {
+        right: 0em;
+    }   
+    button.splide__arrow.splide__arrow--prev {
+        left: 0em;
+    }
 }
 
-#splide02 > div.splide__arrows.splide__arrows--ltr > button.splide__arrow {
-    background-color: transparent;
-}
-#splide02 > div.splide__arrows.splide__arrows--ltr > button.splide__arrow.splide__arrow--next {
-    top: 50%;
-    right: -2.4em;
-}
-#splide02 > div.splide__arrows.splide__arrows--ltr > button.splide__arrow.splide__arrow--prev {
-    top: 50%;
-    left: -2.4em;
-}
 
 /* ----- Splide pagniation buttons ----- */
-ul.splide__pagination.splide__pagination--ltr {
+.splide__pagination.splide__pagination--ltr {
     bottom: -1.5em;
 }
 
@@ -34,6 +38,6 @@ button.splide__pagination__page {
 }
 
 button.splide__pagination__page.is-active {
-    background-color: $clr_m_grey;
-    transform:scale(1.5)
+    background-color: $clr_d_grey;
+    transform: scale(1.4)
 }
