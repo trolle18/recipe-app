@@ -9,17 +9,17 @@ export default function SmallNav() {
     return (
         <>
         <nav className="slim-nav">
-            <div className="slim-nav__header">
-                <Link to={"/"} className="logo">
-                    <GiKnifeFork/>
-                    <h1>Recipes</h1>
-                </Link>
-             </div>  
-                <div className="slim-nav__navigation">
-                    <Categories/>
-                    <Search/>
-                </div>
-                <BurgerMenu/>
+          
+            <Link to={"/"} className="slim-nav__logo">
+                <GiKnifeFork/>
+                <h1>Recipes</h1>
+            </Link>
+
+            <div className="slim-nav__navigation">
+                <Categories/>
+                <Search/>
+            </div>
+            <BurgerMenu/>
         </nav>          
         </>
     );

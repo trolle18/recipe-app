@@ -1,10 +1,12 @@
-.nav-mob-links {
-    width: 65px;
+.burger {
+    height: auto;
+    width: auto;
     right: 0;
+    padding: .5em;
     margin-top: 0;
     margin-bottom: 0;
-    padding: 0 0 2px 2px;
-    border: none;
+    position: relative;
+    border: solid blue 0px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -12,10 +14,10 @@
 
     
     &__menu-btn {
-        height: 20px;
-        width: 20px;
+        height: 50px;
+        width: 25px;
         margin: auto 0;
-        border: solid red 1px;
+        border: solid red 0px;
         text-transform: uppercase;
         background-color: transparent;
         cursor: pointer;
@@ -23,56 +25,65 @@
         
         svg {
             height: 100%;
-            width: 20px;
-            stroke-width: 1px;
-            stroke-linecap: round;
-            stroke: $clr_black;
-            position: absolute;
+            width: 100%;
+            margin: 0 auto;
             left: 0;
             top: 0;
+            border: none;            
+            position: absolute;
 
-            :first-child {
+            path {
                 position: absolute;
-                left: 0;
-                transform: rotate(0deg);
-                transition: .25s;           
-            }
-          
-            :nth-child(2) {
-                position: absolute;
-                left: 0;
-                opacity: 1;
-                transform: translateX(0px);
-                transition: .25s;
-            }
-            
-            :nth-child(3) {
-                position: absolute;
-                transform: rotate(0deg);
-                transition: .25s;
+                stroke-width: 1px;
+                stroke-linecap: round;
+                stroke: $clr_black;     
             }
         }
     }
 
+    &__menu-btn.change {
+        svg {
+            stroke: $clr_black   
+            // path {
+            //     stroke: $clr_orange;     
+            // }
+        }
+    }
+
+        
+
     &__dropdown {
-        border: none;
-        width: inherit;
-        padding: 0px 0px 0px 2px;
-        top: 40px;
-        background-color: $clr_white;
+        height: 100vh;
+        width: 100vw;
+        padding: .5em 1em;
+        top: 4rem;
+        right: 0;
+        z-index: 100;
         position: absolute;
+        background-color: $clr_white;
+        border: solid red 0px;
         display: flex;
         flex-direction: column;
-        column-gap: 10px;
+        gap: .5em;
 
         a {
-            padding-bottom: 10px;
+            width: auto;
+            margin-bottom: 1.5em;
+            display: block;
             font-family: $ff_main;
             font-size: $fs_p;
             text-decoration: none;
             text-transform: uppercase;
             color: $clr_black;
             transition: ease-in .02s;
+
+            &::before {
+                content: "";
+                width: 100%;
+                height: 1px;
+                background-color: $clr_m_grey;
+                display: block;
+            }
 
             &:hover {
                 color: $clr_orange;
@@ -89,7 +100,7 @@
     }
 }
 @media (min-width: 600px) {
-    .nav-mob-links {
+    .burger {
         display: none;
     }
 }

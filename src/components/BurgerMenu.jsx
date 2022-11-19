@@ -39,19 +39,33 @@ export default function BurgerMenu() {
     }
   }
 
+ // eslint-disable-next-line no-lone-blocks
+    {/* <svg viewBox="0 0 10 8" >
+            <path d="M1 0 L9 8"/>
+            <path d="M1 8 L9 0"/>
+        </svg>
+        <svg viewBox="0 0 10 8">
+            <path d="M1 1h8M1 4h 8M1 7h8"/>            
+        </svg> 
+    */} 
+
   return (
     <>
-      <button onClick={openMenu} className="nav-mob-links__menu-btn" id="menu-btn" >
-        <svg viewBox="0 0 10 8"><path d="M1 1h8M1 4h 8M1 7h8"/></svg>
+    <div className='burger'>   
+      <button onClick={openMenu} className="burger__menu-btn" id="menu-btn">
+        <svg viewBox="0 0 10 8">
+            <path d="M1 1 h8"/>
+            <path d="M1 4 h8"/>
+            <path d="M1 7 h8"/>            
+        </svg> 
       </button>
-      <div className={`nav-mob-links__dropdown hidden ${show && ""}`} id="dropdown" >
-
+      <div className={`burger__dropdown hidden ${show && ""}`} id="dropdown">
         <Link to={'/cuisine/italian'}>Italian</Link>
         <Link to={'/cuisine/american'}>American</Link>
         <Link to={'/cuisine/thai'}>Thai</Link>
         <Link to={'/cuisine/japanese'}>Japanese</Link>
-
       </div>
+    </div>
     </>
   );
 };
