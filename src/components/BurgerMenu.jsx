@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Search from './Search';
 
 export default function BurgerMenu() {
   const [show, setShow] = useState(true);
@@ -60,6 +61,7 @@ export default function BurgerMenu() {
         </svg> 
       </button>
       <div className={`burger__dropdown hidden ${show && ""}`} id="dropdown">
+        <Search/>
         <Link to={'/cuisine/italian'}>Italian</Link>
         <Link to={'/cuisine/american'}>American</Link>
         <Link to={'/cuisine/thai'}>Thai</Link>

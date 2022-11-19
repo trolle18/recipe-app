@@ -18,12 +18,12 @@
         
         input {
             width: 100%;
-            padding: 1rem 3rem;
+            padding: 1rem 3rem ;
             border: none;
             border-radius: 1.5em;
             outline: none;
             background-color: $clr_black;
-            font-size: 1.5rem;
+            font-size: $fs_p;
             color: $clr_white;
         }
     }
