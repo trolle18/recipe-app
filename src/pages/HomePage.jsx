@@ -1,3 +1,4 @@
+import Nav from '../components/Nav';
 import Vegetarian from "../components/Vegetarian";
 import Popular from "../components/Popular";
 import { motion } from "framer-motion";
@@ -6,6 +7,7 @@ export default function HomePage() {
 
     return (
         <>
+        <Nav />
         <section className="page homepage">
             <motion.div 
                 animate={ {opacity: 1} }

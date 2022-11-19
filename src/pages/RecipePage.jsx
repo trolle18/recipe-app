@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import SmallNav from "../components/SmallNav";
 
 function RecipePage() {
     let params = useParams();
@@ -22,6 +23,7 @@ function RecipePage() {
 
     return (
         <>
+        <SmallNav/>
         <div className="detail-wrapper">
             <div>
                 <h2>{details.title}</h2>

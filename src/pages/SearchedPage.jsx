@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from "react-router-dom";
+import SmallNav from '../components/SmallNav';
 
 export default function SearchedPage() {
     const [searchedRecipes, setSearchedRecipes] = useState([]);
@@ -28,21 +29,22 @@ export default function SearchedPage() {
 
     return (
         <>
-            <section className="cuisine">
-                <h2>Search result for "{params.search}"</h2>
-                <section className="grid">
-                    {searchedRecipes.map((item) => {
-                        return (
-                            <div className="card" key={item.id}>
-                                 <Link to={'/recipe/'+ item.id}>
-                                    <img src={item.image} alt="" />
-                                    <h4>{item.title}</h4>
-                                </Link>
-                            </div>
-                        )
-                    })}
-                </section>
+        <SmallNav/>
+        <section className="cuisine">
+            <h2>Search result for "{params.search}"</h2>
+            <section className="grid">
+                {searchedRecipes.map((item) => {
+                    return (
+                        <div className="card" key={item.id}>
+                                <Link to={'/recipe/'+ item.id}>
+                                <img src={item.image} alt="" />
+                                <h4>{item.title}</h4>
+                            </Link>
+                        </div>
+                    )
+                })}
             </section>
+        </section>
         </>
     )
 };
