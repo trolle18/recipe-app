@@ -3,12 +3,15 @@
     margin: 0rem 0rem 10rem 0rem;
     display: grid;
     grid-template-columns: 1fr;
+    overflow: hidden;
 }
 
 
 .page-section {
     width: 100%;
     margin: 0 auto;
+    padding: 0 .5em;
+    overflow: hidden;
 }
 
 .page-section-right {

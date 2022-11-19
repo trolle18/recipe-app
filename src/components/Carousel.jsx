@@ -17,7 +17,7 @@ export default function Carousel({recipes}) {
             arrows: false,
             pagination: true,
             drag: true,
-            gap:".5em",
+            gap:"1em",
             rewind: true,
         }}>
             {recipes.map((recipe) => {
