@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import Carousel from "./Carousel";
 
+
 export default function Vegetarian() {
     const [recipes, setRecipes] = useState([]);
 
     useEffect(() => {
         getVeggie();
     },[]);
-
 
     // Fetch vegetarian recipes from API
     const getVeggie = async () => {
@@ -19,19 +19,18 @@ export default function Vegetarian() {
             const data = await api.json();
             localStorage.setItem('veggie', JSON.stringify(data.recipes));  // Recipes are saved to local storage, as Spoonaculars API calls are limited
             setRecipes(data.recipes);
-            console.log(data);
+            // console.log(data);
         }
     }
 
-
     return (
         <>
-            <section className="page-section">
-                <div className="wrapper">
-                    <h3>Vegetarian</h3>
-                    <Carousel recipes={recipes}/>
-                </div>
-            </section>
+        <section className="page-section">
+            <div className="wrapper">
+                <h3>Vegetarian</h3>
+                <Carousel recipes={recipes}/>
+            </div>
+        </section>
         </>
     )
 };

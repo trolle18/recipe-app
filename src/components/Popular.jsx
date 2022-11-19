@@ -9,7 +9,6 @@ export default function Popular() {
         getPopular();
     },[]);
 
-
     // Fetch popular recipes from API
     const getPopular = async() => {
         const check = localStorage.getItem('popular');  // Checks if recipes is saved in local storage
@@ -20,19 +19,18 @@ export default function Popular() {
             const data = await api.json();
             localStorage.setItem('popular', JSON.stringify(data.recipes));  // Recipes are saved to local storage, as Spoonaculars API calls are limited
             setRecipes(data.recipes);
-            console.log(data);
+            // console.log(data);
         }
     }
 
-
     return (
         <>
-            <section className="page-section">
-                <div className="wrapper">
-                    <h3>Popular</h3>
-                    <Carousel recipes={recipes}/>
-                </div>
-            </section>
+        <section className="page-section">
+            <div className="wrapper">
+                <h3>Popular</h3>
+                <Carousel recipes={recipes}/>
+            </div>
+        </section>
         </>
     )
 };

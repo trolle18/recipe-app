@@ -8,8 +8,6 @@ import FavoriteBtn from "./FavoriteBtn";
 export default function RecipeSlide( {recipe} ) {
     // const [favorites, setFavorites] = useState([]);
 
-
-
     // // Save favorite recipes to local storage
     // const addToFavorites = id => {
     //     if (!favorites.includes(id)) setFavorites(favorites.concat(id));
@@ -24,10 +22,8 @@ export default function RecipeSlide( {recipe} ) {
     // // };
 
 
-
     return (
         <>
-
         <SplideSlide key={recipe.id}>
             <article className="box">
                 <div className="card">  
@@ -42,13 +38,10 @@ export default function RecipeSlide( {recipe} ) {
                             </div>                           
                         </div>
                     </Link> 
-
                     <FavoriteBtn />
-                </div>
-              
+                </div>              
             </article>
         </SplideSlide>
-
         </>
     )
 };

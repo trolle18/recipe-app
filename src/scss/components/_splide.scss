@@ -2,7 +2,7 @@
     width: 90%;
     height: auto;
     margin: 0 0;
-    padding: .5em 0;
+    padding: 0 0 .5em 0;
 
     .splide__list {
         height: auto;
@@ -16,7 +16,7 @@
     }
 }
 .splide__track {
-    padding: 1em 0;
+    padding: .5em 0 1em 0;
 }
 
 @media (min-width: 992px) {
