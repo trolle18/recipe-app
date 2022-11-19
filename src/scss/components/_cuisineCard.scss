@@ -1,40 +1,44 @@
 .cuisine-card {
-    height: 380px;
-    // width: 170px;
-    position: relative;
+    height: 300px;
     overflow: hidden;
     z-index: 100;
     border-radius: $border-rad-02;
     box-shadow: rgb(0, 0, 0, .08) 0px 0px 0.125rem 2px;
     transition: ease-in-out .2s;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
 
     &__img-cntr {
         width: 100%;
-        height: 50%;
-        
+        height: 180px;
+        position: relative;
+        border-radius: $border-rad-02;
+
         img {
-           height: 50%;
+           height: 100%;
            width: 100%;
            top: 0%;
            left: 0;
-           position: absolute;
            object-fit: cover;
-           border-radius: 2px;
+           position: absolute;
        } 
-    }    
+    }   
+    &__text {
+        width: 100%;
+        height: auto;
+        padding: .5em;
+    } 
 
     &:hover {
         box-shadow: rgb(0, 0, 0, .09) 0px 0px 0.175rem 4px;        
        
         &__img-cntr {
              img {
-                height: 55%;
-                width: 100%;
-                top: -2.5%;
+                height: 110%;
+                width: 110%;
+                top: 0%;
                 left: 0;
-                position: absolute;
-                object-fit: cover;
-                border-radius: 2px;
             } 
         }
            
