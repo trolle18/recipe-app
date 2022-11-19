@@ -1,7 +1,22 @@
 
 .wrapper {
+    width: 100%;
     margin: 4rem 0rem;
 }
+@media (min-width: 600px) {
+    .wrapper {
+        width: 100%;
+        margin: 2rem 0rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .wrapper {
+        width: 100%;
+        margin: 4rem 0rem;
+    }
+}
+
 
 .detail-wrapper {
     margin-top: 10rem;

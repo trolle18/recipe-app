@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';

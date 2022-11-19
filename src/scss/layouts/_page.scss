@@ -5,12 +5,28 @@
     grid-template-columns: 1fr;
 }
 
+
 .page-section {
-    margin: 0 1rem;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .page-section-right {
     margin: 0 1rem 0 .25rem;
     float: right;
     border: solid blue 1px;
+}
+
+@media (min-width: 600px) {
+    .page-section {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 992px) {
+    .page-section {
+        width: 100%;
+        margin: 0 auto;
+    }
 }

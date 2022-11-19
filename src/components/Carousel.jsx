@@ -8,11 +8,16 @@ export default function Carousel({recipes}) {
     return (
         <>
         <Splide options={{
-            perPage: 3,
-            arrows: true,
+            perPage: 2,
+            breakpoints: {
+                400: {
+                    perPage: 1
+                }
+            },
+            arrows: false,
             pagination: true,
             drag: true,
-            gap:"1em",
+            gap:".5em",
             rewind: true,
         }}>
             {recipes.map((recipe) => {
