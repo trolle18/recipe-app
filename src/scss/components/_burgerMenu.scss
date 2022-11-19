@@ -55,7 +55,7 @@
     &__dropdown {
         height: 100vh;
         width: 100vw;
-        padding: .5em 1em;
+        padding: .5em 1em .5em 2em;
         top: 4rem;
         right: 0;
         z-index: 100;
@@ -71,7 +71,7 @@
 
         a {
             width: auto;
-            margin-bottom: 1.5em;
+            margin: 1em 0 1.5em 0;
             display: block;
             font-family: $ff_main;
             font-size: $fs_p;
