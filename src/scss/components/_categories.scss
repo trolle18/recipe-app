@@ -1,14 +1,14 @@
 /* ----- Categories ----- */
 .categories {
     width: 100%;
-    margin: 2rem auto;
+    margin: 1rem auto .5rem auto;
     display: flex;
     justify-content: space-between;
 
     .category-link {
-        width: 5rem;
-        height: 5rem;
-        padding: 0px;
+        width: 4rem;
+        height: 4rem;
+        padding: 0 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -35,9 +35,41 @@
         }
 
         svg {
-            height: 1.8rem;
+            height: 1.6rem;
             width: auto;
             color: $clr_white;
+        }
+    }
+}
+
+@media (min-width: 600px) {
+    .categories {
+        width: 100%;
+        margin: 2rem auto 1rem auto;
+    
+        .category-link {
+            width: 5rem;
+            height: 5rem;
+    
+            svg {
+                height: 1.8rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .categories {
+        width: 100%;
+        margin: 2rem auto 1rem auto;
+    
+        .category-link {
+            width: 5rem;
+            height: 5rem;
+    
+            svg {
+                height: 1.8rem;
+            }
         }
     }
 }

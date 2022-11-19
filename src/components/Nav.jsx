@@ -7,15 +7,15 @@ import { GiKnifeFork } from "react-icons/gi";
 export default function Nav() {
     return (
         <>
-            <div className="header-img-cntr">
-                <div className="header-img"></div>
+            <div className="hero-cntr">
+                <div className="hero-cntr__img"></div>
             </div>
-            <section className="header">
-                <Link to={"/"} className="logo">
+            <section className="nav-cntr">
+                <Link to={"/"} className="nav-cntr__logo">
                     <GiKnifeFork/>
                     <h1>Recipes</h1>
                 </Link>
-                <div className="nav">
+                <div className="nav-cntr__navigation">
                     <Search/>
                     <Categories/>
                 </div>
