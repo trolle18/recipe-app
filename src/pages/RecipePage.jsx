@@ -10,8 +10,8 @@ function RecipePage() {
 
     // Fetch clicked recipe from API
     const fetchDetails = async () => {
-        const data = await fetch(`https://api.spoonacular.com/recipes/${params.name}/information?apiKey=${process.env.REACT_APP_API_KEY}`);
-        const detailData = await data.json();
+        const api = await fetch(`https://api.spoonacular.com/recipes/${params.name}/information?apiKey=${process.env.REACT_APP_API_KEY}`);
+        const detailData = await api.json();
         setDetails(detailData);
         console.log(detailData);
     };

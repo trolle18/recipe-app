@@ -26,9 +26,13 @@ export default function RecipeSlide( {recipe} ) {
         <>
         <SplideSlide key={recipe.id}>
             <article className="box">
-                <div className="card">  
-                    <Link to={'/recipe/'+ recipe.id}>                                              
+                <div className="card">    
+                    <FavoriteBtn />
+                    <Link to={'/recipe/'+ recipe.id}>      
+                    <div className="img-cntr">
                         <img src={recipe.image} alt={recipe.title}/>
+                    </div>                                        
+                        
                         <div className="card-text">
                             <h4>{recipe.title}</h4>
                             <div className="card-text-details">
@@ -38,7 +42,7 @@ export default function RecipeSlide( {recipe} ) {
                             </div>                           
                         </div>
                     </Link> 
-                    <FavoriteBtn />
+                  
                 </div>              
             </article>
         </SplideSlide>
