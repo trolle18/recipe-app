@@ -40,7 +40,7 @@ export default function CuisinePage() {
 
                 {cuisines.map((recipe) => {
                     return (
-                        <CuisineCard recipe={recipe} key={recipe}/>
+                        <CuisineCard recipe={recipe} key={recipe.id}/>
                     )
                 })}
             </motion.div>

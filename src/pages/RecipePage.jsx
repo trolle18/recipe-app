@@ -25,6 +25,7 @@ function RecipePage() {
         <>
         <SmallNav/>
         <section className="detail-wrapper"> 
+        <button></button>
             <div className="detail-wrapper__header">
                <h1>{details.title}</h1>
                 <div className="img-cntr">

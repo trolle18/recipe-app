@@ -6,7 +6,7 @@ export default function CuisineCard({recipe}) {
 
     return (
         <>
-         <Link to={'/recipe/'+ recipe.id} key={recipe.id}>
+         <Link to={'/recipe/'+ recipe.id}>
             <article className="cuisine-card">
                 <div className="cuisine-card__img-cntr">
                     <img src={recipe.image} alt="" />
