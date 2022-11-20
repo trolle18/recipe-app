@@ -15,7 +15,7 @@ export default function CuisinePage() {
         if (check) {
             setCuisines(JSON.parse(check));
         } else {  // If not, get from API and save to local storage   
-            const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}&number=10`);
+            const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}&number=12`);
             const recipes = await data.json();
             localStorage.setItem(name, JSON.stringify(recipes.results));  // Recipes are saved to local storage, as Spoonaculars API calls are limited
             setCuisines(recipes.results);

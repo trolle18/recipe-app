@@ -8,8 +8,6 @@ export default function Carousel({recipes}) {
     return (
         <>
         <Splide options={{
-            // perPage: 3,
-            // width: "100%",
             breakpoints: {
                 600: {
                     perPage: 1,
@@ -25,7 +23,6 @@ export default function Carousel({recipes}) {
             arrows: false,
             pagination: true,
             drag: true,
-            // gap:"1em",
             rewind: true,
         }}>
             {recipes.map((recipe) => {

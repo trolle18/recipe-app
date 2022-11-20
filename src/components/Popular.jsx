@@ -19,7 +19,6 @@ export default function Popular() {
             const data = await api.json();
             localStorage.setItem('popular', JSON.stringify(data.recipes));  // Recipes are saved to local storage, as Spoonaculars API calls are limited
             setRecipes(data.recipes);
-            // console.log(data);
         }
     }
 
