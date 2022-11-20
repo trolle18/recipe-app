@@ -1,6 +1,5 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import SmallNav from '../components/SmallNav';
 import CuisineCard from '../components/CuisineCard';
@@ -32,7 +31,7 @@ export default function CuisinePage() {
         <>
         <SmallNav/>
         <section className="cuisine page-section">
-            <h2>{params.type}</h2>
+            <h1>{params.type}</h1>
             <motion.div className="grid" 
                 animate={{opacity: 1}}
                 initial={{opacity: 0}}

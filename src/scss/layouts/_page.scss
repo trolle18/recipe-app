@@ -1,23 +1,20 @@
 /* --------- PAGE ---------- */
 .page {
+    width: 100%;
+    height: auto;
     margin: 0rem 0rem 10rem 0rem;
     display: grid;
     grid-template-columns: 1fr;
+    justify-content: center;
     overflow: hidden;
 }
 
 
 .page-section {
     width: 100%;
-    margin: 6rem auto 0 auto;
-    padding: 0 .5em;
+    margin: 0 auto;
+    padding: 0 0em;
     overflow: hidden;
-}
-
-.page-section-right {
-    margin: 0 1rem 0 .25rem;
-    float: right;
-    border: solid blue 1px;
 }
 
 @media (min-width: 600px) {
@@ -30,6 +27,39 @@
 @media (min-width: 992px) {
     .page-section {
         width: 100%;
+        max-width: 2000px;
         margin: 0 auto;
+    }
+}
+
+.page-section-right {
+    margin: 0 1rem 0 .25rem;
+    float: right;
+    border: solid blue 1px;
+}
+
+.cuisine {
+    width: 100%;
+    height: 100%;
+    margin: 8rem auto 0 auto;
+}
+
+
+.cuisine.page-section {
+    overflow: visible;
+    padding: 0 1em;
+}
+
+@media (min-width: 600px) {
+    .cuisine.page-section {
+        overflow: visible;
+        padding: 0 1.5em;
+    }
+}
+
+@media (min-width: 992px) {
+    .cuisine.page-section {
+        overflow: visible;
+        padding: 0 1.5em;
     }
 }

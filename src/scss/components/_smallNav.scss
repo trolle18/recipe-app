@@ -1,23 +1,29 @@
-.slim-nav {
+.slim-nav-cntr {
     width: 100%;
     height: auto;
-    margin: 0 auto;
-    padding: .5em 0;
-    top: 0;
-    position: fixed;
-    z-index: 1000;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: $clr_white;
 
-    &__logo {
+    .slim-nav {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        padding: .5em;
+        top: 0;
+        position: fixed;
+        z-index: 1000;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: $clr_white;
+
+        &__logo {
+            height: auto;
             width: auto;
             margin: 0;
-            padding: .5em;
+            padding: 0em;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            gap: .5em;
             align-items: center;
             text-decoration: none;
 
@@ -26,6 +32,8 @@
             &:hover svg { color: $clr_orange }
             
             h1 {
+                margin: 0 0 .5em 0;
+                padding: 0 ;
                 font-style: normal;
                 font-weight: 400;
                 font-size: $fs_p_large;
@@ -37,130 +45,153 @@
             svg {
                 height: 2rem;
                 width: auto;
+                margin: .5em 0 0 0;
                 color:  $clr_black;
                 transition: .18s ease-in;
             }
-        
-    }
+            
+        }
 
-    &__navigation {
-        display: none;
+        &__navigation {
+            display: none;
+        }
     }
 }
 
 @media (min-width: 600px) {
-    .slim-nav {
-
-        &__header {
-            width: auto;
-            height: auto;
-            padding: .5rem 0rem;
-            
-            .logo {
-                width: auto;
-                margin: 0;
-                padding: 0rem;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                text-decoration: none;
-
-                &:hover h1 { color: $clr_orange }
-                
-                &:hover svg { color: $clr_orange }
+    .slim-nav-cntr {
+        .slim-nav {
+            &__logo {
+                // padding: 1em;
                 
                 h1 {
-                    font-style: normal;
-                    font-weight: 400;
                     font-size: $fs_p_large;
-                    font-family: $ff_logo;
-                    color: $clr_black;
-                    transition: .18s ease-in;
                 }
 
                 svg {
                     height: 2rem;
-                    width: auto;
-                    color:  $clr_black;
-                    transition: .18s ease-in;
                 }
             }
-        }
 
-        &__navigation {
-            display: contents;
-            width: auto;
-            height: auto;
-            margin: 0;
-            padding: 0em;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            gap: 2rem;
-
-            .categories {
+            &__navigation {
+                display: contents;
+                width: auto;
+                height: auto;
                 margin: 0;
+                padding: 0em;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                gap: 2rem;
 
-                .category-link {
-                    width: 4rem;
-                    height: 4rem;
-                    color: $clr_black;
-                    background-color: transparent;
-                    box-shadow: rgb(0, 0, 0, .08) 0px 0px 0.175rem 2px;
-                    &:hover {
-                        box-shadow: rgb(0, 0, 0, .15) 0px 0px 0.175rem 2px;
-                    }
+                .categories {
+                    margin: 0;
 
-                    &:hover {
-                        h4 {
-                            color: $clr_orange;
-                        }    
-                        svg {
-                            color: $clr_orange;
-                        }
-                    }
-                    h4 {
-                        color: $clr_black;
-                    }
-                    svg {
-                        height: 1.2rem;
-                        width: auto;
-                        color: $clr_black;
-                    }
-                }
-            }
-
-            .searchbar-cntr {
-                margin: 0rem auto;
-                width: 80%;   
-            
-                .searchbar {
-                    width: 100%;
-                    position: relative;   
-
-                    svg {
-                        top: 50%;
-                        left: 0%;
-                        position: absolute;
-                        transform: translate(100%, -50%);
-                        color: $clr_black;
-                    }
-                    
-                    input {
-                        width: 100%;
-                        padding: 1rem 3rem;
-                        border: none;
-                        border-radius: 1.5em;
-                        outline: none;
-                        font-size: 1.5rem;
+                    .category-link {
+                        width: 4rem;
+                        height: 4rem;
                         color: $clr_black;
                         background-color: transparent;
                         box-shadow: rgb(0, 0, 0, .08) 0px 0px 0.175rem 2px;
                         &:hover {
                             box-shadow: rgb(0, 0, 0, .15) 0px 0px 0.175rem 2px;
                         }
+
+                        &:hover {
+                            h4 {
+                                color: $clr_orange;
+                            }    
+                            svg {
+                                color: $clr_orange;
+                            }
+                        }
+                        h4 {
+                            color: $clr_black;
+                        }
+                        svg {
+                            height: 1.2rem;
+                            width: auto;
+                            color: $clr_black;
+                        }
+                    }
+                }
+
+                .searchbar-cntr {
+                    margin: 0rem auto;
+                    width: 80%;   
+                
+                    .searchbar {
+                        width: 100%;
+                        position: relative;   
+
+                        svg {
+                            top: 50%;
+                            left: 0%;
+                            position: absolute;
+                            transform: translate(100%, -50%);
+                            color: $clr_black;
+                        }
+                        
+                        input {
+                            width: 100%;
+                            padding: 1rem 3rem;
+                            border: none;
+                            border-radius: 1.5em;
+                            outline: none;
+                            font-size: 1.5rem;
+                            color: $clr_black;
+                            background-color: transparent;
+                            box-shadow: rgb(0, 0, 0, .08) 0px 0px 0.175rem 2px;
+                            &:hover {
+                                box-shadow: rgb(0, 0, 0, .15) 0px 0px 0.175rem 2px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width: 992px) {
+    .slim-nav-cntr {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .slim-nav {
+            max-width: 2000px;
+
+            &__navigation {
+                display: contents;
+                width: auto;
+                height: auto;
+                margin: 0;
+                padding: 0em;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                gap: 4rem;
+
+                .categories {
+                    margin: 0;
+
+                    .category-link {
+                        width: 4rem;
+                        height: 4rem;
+                    }
+                }
+
+                .searchbar-cntr {
+                    margin: 0rem auto;
+                    width: 100%;   
+                
+                    .searchbar {
+                        width: 100%;
+                        position: relative;   
                     }
                 }
             }
