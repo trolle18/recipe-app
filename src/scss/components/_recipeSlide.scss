@@ -1,6 +1,8 @@
-.box {
-    height: 380px;
-    width: 100%;
+.recipe-slide {
+    height: 100%;
+    // min-height: 300px;
+    width: auto;
+    margin: 1em 0;
     position: relative;
     overflow: hidden;
     z-index: 100;
@@ -8,72 +10,72 @@
     box-shadow: rgb(0, 0, 0, .08) 0px 0px 0.125rem 2px;
     transition: ease-in-out .2s;
 
-    .card {
+    &__content {
         height: 100%;
         width: 100%;
 
-        
-    .fav-btn {
-        margin: .5em;
-        z-index: 100;
-        right: 0;
-        position: absolute;
-        box-shadow: rgb(0, 0, 0, .08) 0px 0px 0.125rem 2px;
+        .fav-btn {
+            margin: .5em;
+            z-index: 100;
+            right: 0;
+            position: absolute;
+            box-shadow: rgb(0, 0, 0, .08) 0px 0px 0.125rem 2px;
 
-        svg {
-            height: 1.5em;
-            width: 1.5em;
-            color: $clr_d_grey;
-        }
-
-        &:hover {
-            box-shadow: rgb(0, 0, 0, .08) 0px 0px 0.175rem 4px;
             svg {
-                color: $clr_red-orange;
+                height: 1.5em;
+                width: 1.5em;
+                color: $clr_d_grey;
+            }
+
+            &:hover {
+                box-shadow: rgb(0, 0, 0, .08) 0px 0px 0.175rem 4px;
+                svg {
+                    color: $clr_red-orange;
+                }
+            }
+
+            &:active {
+                svg {
+                    color: $clr_red-orange;
+                }
             }
         }
-
-        &:active {
-            svg {
-                color: $clr_red-orange;
-            }
-        }
-    }
 
         .img-cntr {
-            height: 50%;
+            height: 200px;
             width: 100%;
+
             img {
                 height: 100%;
                 width: 100%;
-                top: 0;
-                left: 0;
+                // top: 0;
+                // left: 0;
                 object-fit: cover;
                 border-radius: 2px;
                 transition: ease-in-out .2s;
             } 
         }
 
-        .card-text {
-            height: 50%;
+        .slide-text {
+            height: auto;
             width: 100%;
-            padding: .2em .5em .5em .5em;
+            padding: .5em;
             bottom: 0;
             position: absolute;
             display: flex;
             flex-direction: column;
+            gap: .5em;
             background-color: $clr_white;
             
             h4 {
                 width: 95%;
-                margin: 0em 0em .2em 0em;
                 display: flex;
                 color: $clr_black;
                 font-weight: 600;
                 font-size: $fs_p_large;
             }    
             
-            .card-text-details {
+            .slide-text-details {
                 width: 100%;
                 height: 100%;
                 display: flex;
@@ -92,98 +94,117 @@
     }
 
     &:hover {
-        box-shadow: rgb(0, 0, 0, .09) 0px 0px 0.175rem 4px;
-
-        .card {
+        &__content {
             .img-cntr {
-            img {
-                height: 105%;
-                width: 100%;
-                top: 0%;
-                left: 0;
-                object-fit: cover;
-                border-radius: 2px;
-            } 
-        }
+                img {
+                    height: 105%;
+                    width: 100%;
+                    top: 0%;
+                    left: 0;
+                    object-fit: cover;
+                    border-radius: 2px;
+                } 
+            }
         }
     }
 }
 
 
 @media (min-width: 600px) {
-    .box {
-        min-height: 20rem;
+    .recipe-slide {
     
-        &:hover {
-            box-shadow: rgb(0, 0, 0, .09) 0px 0px 0.175rem 4px;
+        // &:hover {
+        //     box-shadow: rgb(0, 0, 0, .09) 0px 0px 0.175rem 4px;
             
-            .card {
-                img {
-                    height: 105%;
-                } 
-            }
-        }
+        //     &__content {
+        //         img {
+        //             height: 105%;
+        //         } 
+        //     }
+        // }
     
-        .card {    
+        &__content {    
             .img-cntr {
-                height: 50%;
+                height: 60%;
                 width: 100%;
-                
-                img {
-                    height: 105%;
-                    top: 0;
-                } 
             }
     
-            .card-text {
-                height: 50%;
-                padding: .2em .5em .5em .5em;
+            // .slide-text {
+            //     height: 40%;
                 
-                h4 {
-                    width: 95%;
-                    margin: 0em 0em .2em 0em;
-                    font-size: $fs_p_large;
-                }    
-            }
+            //     // h4 {
+            //     //     width: 95%;
+            //     //     font-size: $fs_p_large;
+            //     // }    
+            // }
         }
     }
 }
 
+
 @media (min-width: 992px) {
-    .box {
-        min-height: 20rem;
+    .recipe-slide {
+    
+        // &:hover {
+        //     box-shadow: rgb(0, 0, 0, .09) 0px 0px 0.175rem 4px;
+            
+        //     &__content {
+        //         img {
+        //             height: 105%;
+        //         } 
+        //     }
+        // }
+    
+        &__content {    
+            .img-cntr {
+                height: 50%;
+                width: 100%;
+            } 
+    
+            // .slide-text {
+            //     height: 50%;
+            //     // padding: .2em .5em .5em .5em;
+                
+            //     // h4 {
+            //     //     width: 95%;
+            //     //     margin: 0em 0em .2em 0em;
+            //     //     font-size: $fs_p_large;
+            //     // }    
+            // }
+        }
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .recipe-slide {
     
         &:hover {
             box-shadow: rgb(0, 0, 0, .09) 0px 0px 0.175rem 4px;
             
-            .card {
+            &__content {
                 img {
                     height: 105%;
                 } 
             }
         }
     
-        .card {    
+        &__content {    
             .img-cntr {
-                height: 50%;
+                height: 60%;
                 width: 100%;
-                
-                img {
-                    height: 105%;
-                    top: 0;
-                } 
             } 
     
-            .card-text {
-                height: 50%;
-                padding: .2em .5em .5em .5em;
+            // .slide-text {
+            //     height: 40%;
+            //     padding: .2em .5em .5em .5em;
                 
-                h4 {
-                    width: 95%;
-                    margin: 0em 0em .2em 0em;
-                    font-size: $fs_p_large;
-                }    
-            }
+            //     // h4 {
+            //     //     width: 95%;
+            //     //     margin: 0em 0em .2em 0em;
+            //     //     font-size: $fs_p_large;
+            //     // }    
+            // }
         }
     }
 }

@@ -8,18 +8,20 @@ export default function Carousel({recipes}) {
     return (
         <>
         <Splide options={{
+            perPage: 4,
+            gap:"1em",
             breakpoints: {
-                600: {
-                    perPage: 1,
-                    width: "100%",
-                    gap:"0em",
-                },
                 992: {
+                    perPage: 4,
+                },
+                600: {
                     perPage: 2,
-                    width: "100%",
-                    gap:"0em",
+                },
+                280: {
+                    perPage: 1,
                 }
             },
+            
             arrows: false,
             pagination: true,
             drag: true,

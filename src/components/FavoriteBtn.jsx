@@ -5,7 +5,7 @@ import { IoHeart } from "react-icons/io5";
 
 
 export default function FavoriteBtn( {recipe} ) {
-    let params = useParams();
+    // let params = useParams();
     // const [favorites, setFavorites] = useState([]);
 
 
@@ -33,13 +33,28 @@ export default function FavoriteBtn( {recipe} ) {
     //     getFavorites();
     // }, [params.name]);
 
+    // const favBtn = document.querySelector('.fav-btn')
+    // const recipeId = document.querySelector('recipe.id')
 
+    // const textForStorage = 'Hello World.'
+
+    // // setter
+    // localStorage.setItem('my-key', textForStorage);
+    
+    // // getter
+    // const textFromStorage = localStorage.getItem('my-key');
+    // // remove
+    // localStorage.removeItem('my-key');
+
+    // // remove all
+    // localStorage.clear();
 
 
     return (
         <>
             <button 
             className="fav-btn" 
+            value={recipe.id}
             // onClick={() => addToFavorites(recipe.id)}
             >
                 <IoHeart/>
