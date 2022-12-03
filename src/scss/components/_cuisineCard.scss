@@ -28,6 +28,15 @@
         width: 100%;
         height: auto;
         padding: .5em;
+
+        h4 {
+            width: 95%;
+            // margin: 0em 0em .2em 0em;
+            padding: 0 0 .2em 0;
+            display: flex;
+            color: $clr_black;
+            font-weight: 600;
+        }
     } 
 
     &:hover {
@@ -66,22 +75,25 @@
             flex-direction: column;
             background-color: $clr_white;
             
-            h4 {
+                h4 {
                 width: 95%;
-                margin: 0em 0em .2em 0em;
+                // margin: 0em 0em .2em 0em;
+                padding: 0 0 .5em 0;
                 display: flex;
                 color: $clr_black;
                 font-weight: 600;
                 font-size: $fs_p_large;
-            }    
+            }
             
             .card-text-details {
                 width: 100%;
                 height: 100%;
                 display: flex;
                 flex-direction: column;
+                
+              
 
-                p::first-letter{
+                p::first-letter {
                     text-transform: uppercase;
                 }
                 
@@ -117,11 +129,11 @@
     
             .card-text {
                 height: 50%;
-                padding: .2em .5em .5em .5em;
+                // padding: .2em .5em .5em .5em;
                 
                 h4 {
-                    width: 95%;
-                    margin: 0em 0em .2em 0em;
+                    // width: 95%;
+                    // margin: 0em 0em .2em 0em;
                     font-size: $fs_p_large;
                 }    
             }
@@ -150,12 +162,11 @@
             } 
     
             .card-text {
-                height: 50%;
-                padding: .2em .5em .5em .5em;
+                // height: 50%;
+                // padding: .2em .5em .5em .5em;
                 
                 h4 {
-                    width: 95%;
-                    margin: 0em 0em .2em 0em;
+
                     font-size: $fs_p_large;
                 }    
             }

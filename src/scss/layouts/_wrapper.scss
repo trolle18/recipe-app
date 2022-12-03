@@ -1,12 +1,12 @@
 
 .wrapper {
-    width: 100vw;
+    width: 100%;
     margin: 2rem 0rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    h3{
+    h3 {
         padding: 0 1em;
     }
 }
@@ -15,7 +15,7 @@
         width: 100%;
         margin: 2rem 0rem;
         
-        h3{
+        h3 {
             padding: 0 1.5em;
         }
     }
@@ -25,7 +25,8 @@
     .wrapper {
         width: 100%;
         margin: 4rem 0rem;
-        h3{
+        
+        h3 {
             padding: 0 1.5em;
         }
     }

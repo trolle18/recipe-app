@@ -38,7 +38,7 @@ export default function RecipeSlide( {recipe} ) {
                             <div className="slide-text-details">
                                 <p><IoTimerOutline/> {recipe.readyInMinutes} min</p>
                                 <p>Servings: {recipe.servings}</p>
-                                <p>{recipe.diets}</p>
+                                {/* <p>{recipe.diets}</p> */}
                             </div>                           
                         </div>
                     </Link> 
