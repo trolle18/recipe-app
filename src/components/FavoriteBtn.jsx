@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useState } from "react";
+// import { useParams } from "react-router-dom";
 import { IoHeart } from "react-icons/io5";
 
 
@@ -49,16 +49,34 @@ export default function FavoriteBtn( {recipe} ) {
     // // remove all
     // localStorage.clear();
 
+    const StorageFavorites = JSON.parse(localStorage.getItem('favorites')) || []
+    const [favorites, setFavorites] = useState(StorageFavorites);
+
+    function handleSaveFavorite(){
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+    }
+    function handleSubmit(e){
+        e.preventDefault();
+        const input = document.getElementById(recipe.id);
+        setFavorites([
+            ...favorites,
+            input.value
+        ]);
+        console.log(favorites)
+        handleSaveFavorite({});
+    }
 
     return (
         <>
+        <form onSubmit={handleSubmit}>
+            <input id={recipe.id} type="hidden" value={recipe.title} />
             <button 
+            type="submit"
             className="fav-btn" 
-            value={recipe.id}
-            // onClick={() => addToFavorites(recipe.id)}
             >
                 <IoHeart/>
             </button>
+        </form>
         </>
     )
 };
