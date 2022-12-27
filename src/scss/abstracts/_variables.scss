@@ -16,11 +16,11 @@ $border-rad-02: .2em;
 $box-shad-02: 1px 1px 10px rgba(0, 0, 0, .2);
 
 // Font-families
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
-$ff_logo: 'Righteous', cursive;
-$ff_main: 'Quicksand', 'Roboto', 'Raleway', 'Montserrat', sans-serif;
+$ff_logo: 'Righteous', 'Roboto', 'Raleway', 'Verdana', sans-serif;
+$ff_main: 'Quicksand', 'Roboto', 'Raleway', 'Montserrat', 'Verdana', sans-serif;
 
 // Font-sizes
 $fs_p: .875em;
