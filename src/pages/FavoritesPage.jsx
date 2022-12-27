@@ -3,26 +3,23 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import SmallNav from '../components/SmallNav';
 import CuisineCard from '../components/CuisineCard';
+import RecipeSlide from '../components/RecipeSlide';
 
 
 export default function FavoritesPage() {
     const [favorites, setFavorites] = useState([]);
     let params = useParams();
 
-    // // Fetch cuisine from API
-    // const getFavorites = async (name) => {
-    //     const check = localStorage.getItem(name);  // Checks if recipes is saved in local storage
-    //     if (check) {
-    //         setFavorites(JSON.parse(check));
-    //     } else {  // If not, get from API and save to local storage   
-    //         return (
-    //             <p>No favorites</p>
-    //         )
-    // };
+     // Fetch cuisine from API
+     const getFavorites = async () => {
+        const check = localStorage.getItem("favorites");  // Checks if recipes is saved in local storage
+        setFavorites(JSON.parse(check));
+        console.log(favorites)
+    };
     
-    // useEffect(() => {
-    //     getFavorites(params.type)
-    // }, [params.type]);
+    useEffect(() => {
+        getFavorites();
+    }, [params.name]);
 
 
 
@@ -39,7 +36,8 @@ export default function FavoritesPage() {
 
                 {favorites.map((recipe) => {
                     return (
-                        <CuisineCard recipe={recipe} key={recipe.id}/>
+                        // <CuisineCard recipe={recipe} key={recipe.id}/>
+                        <RecipeSlide recipe={recipe} key={recipe.id}/>
                     )
                 })}
             </motion.div>
