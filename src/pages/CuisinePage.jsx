@@ -2,7 +2,8 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import SmallNav from '../components/SmallNav';
-import CuisineCard from '../components/CuisineCard';
+// import CuisineCard from '../components/CuisineCard';
+import RecipeSlide from '../components/RecipeSlide';
 
 
 export default function CuisinePage() {
@@ -40,7 +41,7 @@ export default function CuisinePage() {
 
                 {cuisines.map((recipe) => {
                     return (
-                        <CuisineCard recipe={recipe} key={recipe.id}/>
+                        <RecipeSlide recipe={recipe} key={recipe.id}/>
                     )
                 })}
             </motion.div>

@@ -2,16 +2,6 @@ import { IoHeart } from "react-icons/io5";
 
 
 export default function FavoriteBtn( {recipe} ) {
-        
-    // const removeFav = (e, favRecipe) => {
-    //     this.setState(prevState => ({
-    //       bag: prevState.bag.filter(d => d !== favRecipe)
-    //     }));
-    //     // actual localStorage item removing 
-    //         let favorites  = JSON.parse(localStorage.getItem("favorites"))
-    //         favorites.splice(favorites.indexOf(favRecipe), 1)
-    //         localStorage.setItem("recipe", JSON.stringify(favorites));
-    //   };
 
 
     function addFav() {
@@ -33,17 +23,13 @@ export default function FavoriteBtn( {recipe} ) {
             "servings": servings,
             "diets": diets
         };
-        const isFav = localStorage.getItem(favRecipe)
-        if (isFav) {
-            // removeFav()
-            // let favorites  = JSON.parse(localStorage.getItem("favorites"))
-            // favorites.splice(favorites.indexOf(favRecipe), 1)
-            // favorites.push(favRecipe);
-        }
-        else {
+        // const isFav = localStorage.getItem(favRecipe)
+        // if (isFav) {
+        // }
+        // else {
             favorites.push(favRecipe);
             localStorage.setItem("favorites", JSON.stringify(favorites));
-        }
+        // }
     };
 
     function handleSubmit(e) {

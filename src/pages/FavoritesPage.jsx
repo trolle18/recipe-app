@@ -27,7 +27,8 @@ export default function FavoritesPage() {
         <>
         <SmallNav/>
         <section className="cuisine page-section">
-            <h1>{params.type}</h1>
+            <h1>Favorites</h1>
+
             <motion.div className="grid" 
                 animate={{opacity: 1}}
                 initial={{opacity: 0}}
