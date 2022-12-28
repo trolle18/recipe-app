@@ -14,33 +14,13 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        // justify-content: space-between;
 
         .fav-btn {
             margin: .5em;
             z-index: 100;
             right: 0;
             position: absolute;
-            box-shadow: rgb(0, 0, 0, .08) 0px 0px 0.125rem 2px;
-
-            svg {
-                height: 1.5em;
-                width: 1.5em;
-                color: $clr_d_grey;
-            }
-
-            &:hover {
-                box-shadow: rgb(0, 0, 0, .08) 0px 0px 0.175rem 4px;
-                svg {
-                    color: $clr_red-orange;
-                }
-            }
-
-            &:active {
-                svg {
-                    color: $clr_red-orange;
-                }
-            }
+            // background-color: $clr_true_white;
         }
 
         .img-cntr {
@@ -50,8 +30,6 @@
             img {
                 height: 100%;
                 width: 100%;
-                // top: 0;
-                // left: 0;
                 object-fit: cover;
                 border-radius: 2px;
                 transition: ease-in-out .2s;

@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Categories from "./Categories";
 import Search from "./Search";
 import { GiKnifeFork } from "react-icons/gi";
+import { IoHeart } from "react-icons/io5";
 
 
 export default function Nav() {
@@ -17,8 +18,18 @@ export default function Nav() {
                 </Link>
                 <div className="nav-cntr__navigation">
                     <Search/>
-                    <Categories/>
+                    <section className='categories'>
+                        <Categories/>
+                    </section>
+
+                   <section className='categories'>
+                        <NavLink className="fav-btn cat-sub-link"  to={'/favorites'} >
+                            <IoHeart/>
+                            <span>Favorites</span>
+                        </NavLink>
+                    </section>
                 </div>
+               
             </section>    
         </>
     );

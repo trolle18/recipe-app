@@ -62,7 +62,6 @@
     .slim-nav-cntr {
         .slim-nav {
             &__logo {
-                // padding: 1em;
                 
                 h1 {
                     font-size: $fs_p_large;
@@ -83,19 +82,55 @@
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-between;
-                gap: 2rem;
+                // gap: .5em;
+
+                // .fav-btn.category-link {
+                //     height: auto;
+                //     width: auto;
+                //     margin: 0em 0 0 0;
+                //     padding: 0em;
+                //     flex-direction: column;
+                //     gap: .25em;
+                //     box-shadow: rgb(0, 0, 0, 0) 0px 0px 0px 0px;       
+                
+                //     svg {
+                //         display: block;
+                //         height: $fs_p;
+                //         width: $fs_p;
+                //     }
+                //     span {
+                //         font-size: 0.6em;
+                //         font-weight: 600;
+                //         color: $clr_d_grey;
+                //     }
+                
+                //     &:hover {
+                //         box-shadow: rgb(0, 0, 0, 0) 0px 0px 0px 0px;
+                //         span {
+                //             color: $clr_red_orange;
+                //         }
+                //     }
+                
+                //     &:active {
+                //         span {
+                //             color: $clr_red_orange;
+                //         }
+                //     }
+                // }
 
                 .categories {
+                    height: 100%;
                     margin: 0;
+                    justify-content: space-evenly;                    
 
                     .category-link {
-                        width: 4rem;
-                        height: 4rem;
+                        width: 3.5rem;
+                        height: 100%;
                         color: $clr_black;
                         background-color: transparent;
-                        box-shadow: rgb(0, 0, 0, .08) 0px 0px 0.175rem 2px;
+                        box-shadow: rgb(0, 0, 0, .0) 0px 0px 0px 0px;
                         &:hover {
-                            box-shadow: rgb(0, 0, 0, .15) 0px 0px 0.175rem 2px;
+                            box-shadow:  rgb(0, 0, 0, .0) 0px 0px 0px 0px;
                         }
 
                         &:hover {
@@ -110,19 +145,20 @@
                             color: $clr_black;
                         }
                         svg {
-                            height: 1.2rem;
+                            height: 1.5rem;
                             width: auto;
                             color: $clr_black;
                         }
                     }
                 }
 
+
                 .searchbar-cntr {
                     margin: 0rem auto;
                     width: 80%;   
                 
                     .searchbar {
-                        width: 100%;
+                        width: auto;
                         position: relative;   
 
                         svg {
@@ -135,16 +171,16 @@
                         
                         input {
                             width: 100%;
-                            padding: 1rem 3rem;
+                            padding: .75rem 3rem;
                             border: none;
                             border-radius: 1.5em;
                             outline: none;
-                            font-size: 1.5rem;
+                            font-size: 1rem;
                             color: $clr_black;
-                            background-color: transparent;
-                            box-shadow: rgb(0, 0, 0, .08) 0px 0px 0.175rem 2px;
+                            background-color: $clr_semitrans_l_grey60;
+                            box-shadow: rgb(0, 0, 0, .0) 0px 0px 0px 0px;
                             &:hover {
-                                box-shadow: rgb(0, 0, 0, .15) 0px 0px 0.175rem 2px;
+                                box-shadow: rgb(0, 0, 0, .0) 0px 0px 0px 0px;
                             }
                         }
                     }

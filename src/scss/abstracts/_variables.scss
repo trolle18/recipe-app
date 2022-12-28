@@ -1,17 +1,26 @@
 // Colors
-$clr_true_black: #000000;
+$clr_true_black: #000;
 $clr_black: #252525;
+$clr_true_white: #fff;
 $clr_white: #f2f2f2;
 $clr_l_grey: #dadada;
 $clr_m_grey: #a9a9a9;
 $clr_md_grey: #717171;
 $clr_d_grey: #484848;
+
 $clr_orange: #e8812d; /* #ffa962; */
 $clr_red-orange: #d64b21;
+$clr_red_orange: #d64b21;
 $clr_blue: #4c54aa;
 $clr_green: #508d46;
 
+$clr_transparent_white40: rgba(242, 242, 242, .4);
+$clr_transparent_white90: rgba(242, 242, 242, .9);
 $clr_transparent_white: rgba(242, 242, 242, .5);
+
+$clr_semitrans_l_grey60: rgba(218, 218, 218, .6);
+$clr_semitrans_l_grey90: rgba(218, 218, 218, .9);
+
 $border-rad-02: .2em;
 $box-shad-02: 1px 1px 10px rgba(0, 0, 0, .2);
 
@@ -24,6 +33,7 @@ $ff_main: 'Quicksand', 'Roboto', 'Raleway', 'Montserrat', 'Verdana', sans-serif;
 
 // Font-sizes
 $fs_p: .875em;
+$fs_p_sm: .75em;  
 $fs_p_small: .625em;  
 $fs_p_large: 1em;
 
@@ -32,3 +42,8 @@ $fs_h_medium: 1.375em;
 $fs_h_large: 1.5em;
 $fs_h_xl: 2rem;
 $fs_h_xxl: 2.5rem;
+
+// Transitions
+$ease_in_018: .18s ease-in;
+$ease_in_01: .1s ease-in;
+$ease_in_005: .05s ease-in;

@@ -1,8 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Categories from "./Categories";
 import Search from "./Search";
 import { GiKnifeFork } from "react-icons/gi";
 import BurgerMenu from "./BurgerMenu";
+import { IoHeart } from "react-icons/io5";
+import { FaPizzaSlice } from "react-icons/fa";
 
 
 export default function SmallNav() {
@@ -16,7 +18,16 @@ export default function SmallNav() {
                 </Link>
 
                 <div className="slim-nav__navigation">
-                    <Categories/>
+                    <section className='categories'>                
+                        <Categories/>
+
+                        <NavLink to={'/favorites'} className="category-link">
+                            <IoHeart/>
+                            <h4>Favorites</h4>
+                        </NavLink>
+
+                    </section>
+                    
                     <Search/>
                 </div>
                 <BurgerMenu/>
