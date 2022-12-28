@@ -7,30 +7,30 @@ import FavoriteBtn from "./FavoriteBtn";
 
 export default function RecipeSlide( {recipe} ) {
 
-    function CheckReady()  {
-        const readyInMin = recipe.readyInMinutes;
-        if (readyInMin) {
-            return (
-                <p><IoTimerOutline/> {recipe.readyInMinutes} min</p>
-            )
-        }
-    }
-    function CheckServings()  {
-        const servings = recipe.servings;
-        if (servings) {
-            return (
-                <p>Servings: {recipe.servings}</p>
-            )
-        }
-    }
-    function CheckDiets()  {
-        const diets = recipe.diets;
-        if (diets) {
-            return (
-                <p>{recipe.diets}</p>
-            )
-        }
-    }
+    // function CheckReady()  {
+    //     const readyInMin = recipe.readyInMinutes;
+    //     if (readyInMin) {
+    //         return (
+    //             <p><IoTimerOutline/> {recipe.readyInMinutes} min</p>
+    //         )
+    //     }
+    // }
+    // function CheckServings()  {
+    //     const servings = recipe.servings;
+    //     if (servings) {
+    //         return (
+    //             <p>Servings: {recipe.servings}</p>
+    //         )
+    //     }
+    // }
+    // function CheckDiets()  {
+    //     const diets = recipe.diets;
+    //     if (diets) {
+    //         return (
+    //             <p>{recipe.diets}</p>
+    //         )
+    //     }
+    // }
 
 
     return (
@@ -47,9 +47,12 @@ export default function RecipeSlide( {recipe} ) {
                         <div className="slide-text">
                             <h4>{recipe.title}</h4>
                             <div className="slide-text-details">
-                               {CheckReady()} {/* <p><IoTimerOutline/> {recipe.readyInMinutes} min</p> */}
-                               {CheckServings()} {/* <p>Servings: {recipe.servings}</p> */}
-                               {CheckDiets()} {/* <p>{recipe.diets}</p> */}
+                               {/* {CheckReady()}  */}
+                               <p><IoTimerOutline/> {recipe.readyInMinutes} min</p>
+                               {/* {CheckServings()}  */}
+                               <p>Servings: {recipe.servings}</p>
+                               {/* {CheckDiets()}  */}
+                               <p>{recipe.diets}</p>
                             </div>                           
                         </div>
                     </Link> 

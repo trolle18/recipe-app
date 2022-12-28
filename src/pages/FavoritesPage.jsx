@@ -40,7 +40,7 @@ export default function FavoritesPage() {
             </div>
         </div>
 
-            <motion.div className="grid" 
+            <motion.div className="flex-grid" 
                 animate={{opacity: 1}}
                 initial={{opacity: 0}}
                 exit={{opacity: 0}}
