@@ -37,7 +37,7 @@ export default function FavoritesPage() {
                 <input 
                 type="text" 
                 placeholder='Search favorites...'
-                onChange={(e) => setSearchValue(e.target.searchValue.toLowerCase())} 
+                onChange={(e) => setSearchValue(e.target.value.toLowerCase())} 
                 />
             </div>
         </div>
