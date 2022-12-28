@@ -32,7 +32,8 @@ export default function SmallNav() {
                 </div>
                 <BurgerMenu/>
             </div>
-        </nav>          
+        </nav>  
+        <div className="hidden" id="nav-overflow"></div>        
         </>
     );
 };

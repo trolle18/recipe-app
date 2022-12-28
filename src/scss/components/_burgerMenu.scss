@@ -2,11 +2,9 @@
     height: auto;
     width: auto;
     right: 0;
-    padding: .5em;
+    padding: 0em;
     margin-top: 0;
     margin-bottom: 0;
-    position: relative;
-    border: solid blue 0px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -16,12 +14,19 @@
     &__menu-btn {
         height: 50px;
         width: 25px;
-        margin: auto 0;
-        border: solid red 0px;
+        margin: auto .5em auto 0em;
+        border: none;
         text-transform: uppercase;
         background-color: transparent;
         cursor: pointer;
         position: relative;
+
+        &.change {
+            margin: auto 2em auto 0;
+            svg {
+                stroke: $clr_black   
+            }
+        }
         
         svg {
             height: 100%;
@@ -41,57 +46,64 @@
         }
     }
 
-    &__menu-btn.change {
-        svg {
-            stroke: $clr_black   
-            // path {
-            //     stroke: $clr_orange;     
-            // }
-        }
-    }
 
         
 
     &__dropdown {
         height: 100vh;
         width: 100vw;
-        padding: .5em 1em .5em 2em;
-        top: 4rem;
+        padding: .5em;
+        top: 5rem;
+        left: 0;
         right: 0;
         z-index: 100;
         position: absolute;
         background-color: $clr_white;
-        display: flex;
-        flex-direction: column;
-        gap: .5em;
 
-        .searchbar-cntr {
-            margin: .5rem 0;
+        .dropdown-inner-cntr {
+            height: auto;
+            max-width: 100%;
+            margin: 0 1em;
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            
+
+            .searchbar-cntr {
+                height: auto;
+                width: 100%;
+                margin: 0 0;
+                padding: 0 0;
+            }
+
+            a {
+                height: auto;
+                width: 100%;
+                margin: 0 0;
+                padding: 0 0;
+                display: block;
+                font-family: $ff_main;
+                font-size: $fs_p;
+                text-decoration: none;
+                text-transform: uppercase;
+                color: $clr_black;
+                transition: ease-in .02s;
+
+                &::before {
+                    content: "";
+                    width: 100%;
+                    height: 1px;
+                    background-color: $clr_m_grey;
+                    display: block;
+                }
+
+                &:hover {
+                    color: $clr_orange;
+                }
+            } 
         }
 
-        a {
-            width: auto;
-            margin: 1em 0 1.5em 0;
-            display: block;
-            font-family: $ff_main;
-            font-size: $fs_p;
-            text-decoration: none;
-            text-transform: uppercase;
-            color: $clr_black;
-            transition: ease-in .02s;
-
-            &::before {
-                content: "";
-                width: 100%;
-                height: 1px;
-                background-color: $clr_m_grey;
-                display: block;
-            }
-
-            &:hover {
-                color: $clr_orange;
-            }
-        }                
+                      
     }    
     
     &__dropdown.show {
@@ -107,4 +119,9 @@
     .burger {
         display: none;
     }
+}
+
+
+body.overflow {
+    overflow: hidden;
 }
