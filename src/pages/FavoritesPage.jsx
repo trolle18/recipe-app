@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import SmallNav from '../components/SmallNav';
-import CuisineCard from '../components/CuisineCard';
+// import CuisineCard from '../components/CuisineCard';
 import RecipeSlide from '../components/RecipeSlide';
 
 
