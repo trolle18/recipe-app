@@ -20,7 +20,6 @@
             z-index: 100;
             right: 0;
             position: absolute;
-            // background-color: $clr_true_white;
         }
 
         .img-cntr {
@@ -80,8 +79,6 @@
                 img {
                     height: 105%;
                     width: 100%;
-                    // top: 0%;
-                    // left: 0;
                     object-fit: cover;
                     border-radius: 2px;
                 } 
@@ -93,34 +90,20 @@
 
 @media (min-width: 600px) {
     .recipe-slide {
-        // height: 100%;
     
         &:hover {
             box-shadow: rgb(0, 0, 0, .08) 0px 0px 0.175rem 4px;
-            
-            // &__content {
-            //     height: 100%;
-            //     .img-cntr {
-            //         img {
-            //             height: 105%;
-            //         }  
-            //     }
-               
-            // }
         }
     
         &__content {    
             .img-cntr {
                 height: 260px;
-                // min-height: 280px;
-                // width: 100%;
             }
     
             .slide-text {
                 min-height: 100px;
                 
                 h4 {
-                    // width: 95%;
                     font-size: $fs_p_large;
                 }    
             }
@@ -145,19 +128,7 @@
         &__content {    
             .img-cntr {
                 height: 50%;
-                // width: 100%;
             } 
-    
-            // .slide-text {
-            //     height: 50%;
-            //     // padding: .2em .5em .5em .5em;
-                
-            //     // h4 {
-            //     //     width: 95%;
-            //     //     margin: 0em 0em .2em 0em;
-            //     //     font-size: $fs_p_large;
-            //     // }    
-            // }
         }
     }
 }
@@ -166,32 +137,14 @@
 @media (min-width: 1200px) {
     .recipe-slide {
     
-        // &:hover {
-        //     box-shadow: rgb(0, 0, 0, .09) 0px 0px 0.175rem 4px;
-            
-        //     &__content {
-        //         .img-cntr {
-        //             img {
-        //             height: 105%;
-        //         } 
-        //         }
-                
-        //     }
-        // }
-    
         &__content {    
             .img-cntr {
                 height: 300px;
-                // width: 100%;
             } 
     
             .slide-text {
-                // height: 40%;
-                // padding: .2em .5em .5em .5em;
                 
                 h4 {
-                    // width: 95%;
-                    // margin: 0em 0em .2em 0em;
                     font-size: $fs_h_small;
                 }    
             }

@@ -1,4 +1,4 @@
-import { Splide } from '@splidejs/react-splide';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import RecipeSlide from "./RecipeSlide";
 
@@ -36,7 +36,9 @@ export default function Carousel({recipes}) {
         }}>
             {recipes.map((recipe) => {
                 return(
-                    <RecipeSlide recipe={recipe} key={recipe.id}/>
+                    <SplideSlide key={recipe.id}>
+                        <RecipeSlide recipe={recipe}/>
+                    </SplideSlide>
                 );
             })}
         </Splide>

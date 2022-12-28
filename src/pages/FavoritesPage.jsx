@@ -2,13 +2,15 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import SmallNav from '../components/SmallNav';
-// import CuisineCard from '../components/CuisineCard';
 import RecipeSlide from '../components/RecipeSlide';
+import { FaSearch } from 'react-icons/fa';
 
 
 export default function FavoritesPage() {
     const [favorites, setFavorites] = useState([]);
     let params = useParams();
+    const [searchValue, setSearchValue] = useState("");
+
 
      // Fetch cuisine from API
      const getFavorites = async () => {
@@ -22,12 +24,21 @@ export default function FavoritesPage() {
     }, [params.name]);
 
 
-
     return (
         <>
         <SmallNav/>
         <section className="cuisine page-section">
             <h1>Favorites</h1>
+
+            <div className="searchbar-cntr">
+            <div className="searchbar">
+                <FaSearch/>
+                <input 
+                type="text" 
+                    onChange={(e) => setSearchValue(e.target.value.toLowerCase())} 
+                />
+            </div>
+        </div>
 
             <motion.div className="grid" 
                 animate={{opacity: 1}}
@@ -35,9 +46,10 @@ export default function FavoritesPage() {
                 exit={{opacity: 0}}
                 transition={{duration: 0.5}}>
 
-                {favorites.map((recipe) => {
+                {favorites
+                .filter((recipe) => recipe.title.toLowerCase().startsWith(searchValue) || recipe.diets.toLowerCase().startsWith(searchValue))
+                .map((recipe) => {
                     return (
-                        // <CuisineCard recipe={recipe} key={recipe.id}/>
                         <RecipeSlide recipe={recipe} key={recipe.id}/>
                     )
                 })}
