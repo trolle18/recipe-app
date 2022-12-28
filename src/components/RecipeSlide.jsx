@@ -35,7 +35,6 @@ export default function RecipeSlide( {recipe} ) {
 
     return (
         <>
-        {/* <SplideSlide key={recipe.id}> */}
             <article className="recipe-slide">
                 <div className="recipe-slide__content">    
                     <FavoriteBtn recipe={recipe}/>
@@ -59,7 +58,6 @@ export default function RecipeSlide( {recipe} ) {
                   
                 </div>              
             </article>
-        {/* </SplideSlide> */}
         </>
     )
 };

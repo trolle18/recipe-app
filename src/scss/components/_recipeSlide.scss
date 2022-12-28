@@ -8,6 +8,7 @@
     border-radius: $border-rad-02;
     box-shadow: rgb(0, 0, 0, .06) 0px 0px 0.125rem 2px;
     transition: ease-in-out .2s;
+    // overflow: hidden;
 
     &__content {
         height: 100%;
@@ -25,6 +26,9 @@
         .img-cntr {
             height: 280px;
             width: 100%;
+            overflow: hidden;
+            object-fit: cover;
+            border-radius: 2px;
 
             img {
                 height: 100%;
@@ -46,6 +50,12 @@
             flex-direction: column;
             gap: .5em;
             background-color: $clr_white;
+
+            h3 {
+                margin: auto 0;
+                text-transform: none;
+                font-size: $fs_h_large;
+            }
             
             h4 {
                 width: 95%;

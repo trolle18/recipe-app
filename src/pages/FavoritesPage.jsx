@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import SmallNav from '../components/SmallNav';
 import RecipeSlide from '../components/RecipeSlide';
 import { FaSearch } from 'react-icons/fa';
+import RecipeArticle from '../components/RecipeArticle';
 
 
 export default function FavoritesPage() {
@@ -50,7 +51,7 @@ export default function FavoritesPage() {
                 .filter((recipe) => recipe.title.toLowerCase().startsWith(searchValue) || recipe.diets.toLowerCase().startsWith(searchValue))
                 .map((recipe) => {
                     return (
-                        <RecipeSlide recipe={recipe} key={recipe.id}/>
+                        <RecipeArticle recipe={recipe} key={recipe.id}/>
                     )
                 })}
             </motion.div>

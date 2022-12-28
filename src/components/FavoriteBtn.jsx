@@ -11,17 +11,39 @@ export default function FavoriteBtn( {recipe} ) {
         var id = document.getElementById(recipe.id).value;
         var title = document.getElementById(recipe.title).value;
         var image = document.getElementById(recipe.image).value;
-        var readyInMinutes = document.getElementById(recipe.readyInMinutes).value;
-        var servings = document.getElementById(recipe.servings).value;
-        var diets = document.getElementById(recipe.diets).value;
+
+        function checkReady() {
+            const readyInMinutes = document.getElementById(recipe.readyInMinutes);
+            if(readyInMinutes) {
+                return readyInMinutes
+            } else {
+                return null
+            }
+        }
+        function checkServings() {
+            const servings = document.getElementById(recipe.servings);
+            if(servings) {
+                return servings
+            } else {
+                return null
+            }
+        }
+        function checkDiets() {
+            const diets = document.getElementById(recipe.diets);
+            if(diets) {
+                return diets
+            } else {
+                return null
+            }
+        }
 
         var favRecipe = {
             "id": id,
             "title": title,
             "image": image,
-            "readyInMinutes": readyInMinutes,
-            "servings": servings,
-            "diets": diets
+            "readyInMinutes": checkReady,
+            "servings": checkServings,
+            "diets": checkDiets
         };
         // const isFav = localStorage.getItem(favRecipe)
         // if (isFav) {
