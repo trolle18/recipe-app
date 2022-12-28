@@ -20,10 +20,8 @@ export default function Carousel({recipes}) {
                 },
                 992: {
                     perPage: 3,
-                },
-                
-            },
-            
+                },                
+            },            
             arrows: false,
             pagination: true,
             drag: true,

@@ -14,7 +14,15 @@
     width: 100%;
     margin: 0 auto;
     padding: 0 0em;
-    // overflow: hidden;
+
+    h1 {
+        margin: .5em 0;
+    }
+
+    .searchbar-cntr {
+        max-width: 500px;
+        margin: .5em 0;
+    }
 }
 
 @media (min-width: 600px) {
