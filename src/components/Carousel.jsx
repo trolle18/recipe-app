@@ -14,17 +14,12 @@ export default function Carousel({recipes}) {
             breakpoints: {
                400: {
                     perPage: 2,
-                    // gap:".5em",
-                    // width: "100%"
                 },
                 600: {
                     perPage: 3,
-                    // gap:".5em",
                 },
                 992: {
                     perPage: 3,
-                    // gap:"1em",
-                    // width: "100%",
                 },
                 
             },
