@@ -10,11 +10,14 @@ export default function RecipeArticle( {recipe} ) {
             <article className="recipe-slide recipe-article">
                 <div className="recipe-slide__content">    
                     <FavoriteBtn recipe={recipe}/>
-                        <div className="image-cntr">
+                    <div className="image-outer-cntr">
+                         <div className="image-cntr">
                             <img src={recipe.image} alt={recipe.title}/>
-                        </div>             
+                        </div>     
+                    </div>
+                               
 
-                        <Link to={'/recipe/'+ recipe.id}>      
+                    <Link to={'/recipe/'+ recipe.id}>      
                         <div className="slide-text">
                             <h3>{recipe.title}</h3>
                         </div>
