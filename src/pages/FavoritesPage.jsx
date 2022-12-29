@@ -5,6 +5,7 @@ import SmallNav from '../components/SmallNav';
 import RecipeSlide from '../components/RecipeSlide';
 import { FaSearch } from 'react-icons/fa';
 import RecipeArticle from '../components/RecipeArticle';
+import Footer from '../components/Footer';
 
 
 export default function FavoritesPage() {
@@ -42,8 +43,8 @@ export default function FavoritesPage() {
                     />
                 </div>
             </div>
-            </section>
-            <section className=" page-section">
+            {/* </section>
+            <section className=" page-section"> */}
 
                 <motion.div className="flex-grid" 
                     animate={{opacity: 1}}
@@ -60,7 +61,9 @@ export default function FavoritesPage() {
                     })}
                 </motion.div>
             </section>
+            <Footer/>
         </section>
+        
         </>
     )
 }

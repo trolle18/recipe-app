@@ -1,19 +1,22 @@
 /* --------- PAGE ---------- */
 .page {
     width: 100%;
-    height: auto;
+    min-height: 100vh;
     margin: 8rem 0rem 10rem 0rem;
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-content: center;
+    padding: 0 1em;
+    position: relative;
+    // display: grid;
+    // grid-template-columns: 1fr;
+    // justify-content: center;
     // overflow: hidden;
 }
 
 
 .page-section {
+    height: auto;
     width: 100%;
     margin: 0 auto;
-    padding: 0 0em;
+    padding: 0 0 8em 0;
 
     h1 {
         margin: .5em 0;
