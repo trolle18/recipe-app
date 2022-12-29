@@ -20,7 +20,7 @@ export default function Footer() {
                    <FaPizzaSlice/>
                    <h4> Italian</h4>
                 </NavLink>
-
+                
                 <NavLink to={'/cuisine/american'} className="category-link">
                     <FaHamburger/>
                     <h4>American</h4>
@@ -34,13 +34,12 @@ export default function Footer() {
                 <NavLink to={'/cuisine/japanese'} className="category-link">
                    <GiSushis/>
                    <h4>Japanese</h4>
-                </NavLink>           
-            </section>
-            <section  className="footer-section">
+                </NavLink>
+
                 <NavLink to={'/favorites'} className="category-link">
                     <IoHeart/> 
                     <h4>Favorites</h4>
-                </NavLink>               
+                </NavLink>       
             </section>
         </footer>
            

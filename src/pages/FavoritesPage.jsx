@@ -18,7 +18,7 @@ export default function FavoritesPage() {
      const getFavorites = async () => {
         const check = localStorage.getItem("favorites");  // Checks if recipes is saved in local storage
         setFavorites(JSON.parse(check));
-        console.log(favorites)
+        // console.log(favorites)
     };
     
     useEffect(() => {
