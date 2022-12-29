@@ -10,7 +10,7 @@ export default function RecipeArticle( {recipe} ) {
             <article className="recipe-slide recipe-article">
                 <div className="recipe-slide__content">    
                     <FavoriteBtn recipe={recipe}/>
-                        <div className="img-cntr">
+                        <div className="image-cntr">
                             <img src={recipe.image} alt={recipe.title}/>
                         </div>             
 

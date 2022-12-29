@@ -164,51 +164,53 @@
 
 
 
-.recipe-article.recipe-slide {
-    height: max-content;
+.recipe-article {
+    height: 360px;
     width: 100%;
 
-    &__content {
+    .recipe-slide__content {
+        height: 100%;
 
-        .img-cntr {
-            height: auto;
-            width: 100%;
+        .image-cntr {
+            height: 100%;
+            width: auto;
             position: relative;
             overflow: hidden;
             object-fit: cover;
             border-radius: 2px;
+            // border: solid red 1px;
 
             img {
                 height: 100%;
-                width: 100%;
+                width: auto;
                 position: absolute;
-                // object-fit: cover;
-                border-radius: 2px;
+                margin: -50%;
+                top: 50%;
+                // bottom: -50%;
+                left: 50%;
+                right: 50%;
                 transition: ease-in-out .2s;
             } 
         }
 
         .slide-text {
+            height: 100px;
+            // border: solid blue 1px;
 
             h3 {
                 margin: auto 0;
                 text-transform: none;
                 font-size: $fs_h_large;
             }
-             
- 
-            
         }
     }
 
     &:hover {
-        &__content {
-            .img-cntr {
+        .recipe-slide__content {
+            .image-cntr {
                 img {
                     height: 105%;
-                    width: 100%;
-                    object-fit: cover;
-                    border-radius: 2px;
+                    width: auto;
                 } 
             }
         }
@@ -218,31 +220,39 @@
 
 @media (min-width: 600px) {
     .recipe-article {
+        // height: 420px;
         max-width: 48%;
     
-        &__content {    
-            .img-cntr {
-                height: 280px;
-            }
-        }
+        // .recipe-slide__content {    
+        //     .image-cntr {
+        //         height: 360px;
+        //     }
+        // }
     }
 }
 
 
 @media (min-width: 992px) {
     .recipe-article {
+        // height: auto;
         max-width: 30%;
+        // .recipe-slide__content {    
+        //     .image-cntr {
+        //         height: 100%;
+        //         width: 100%;
+        //     }
+        // }
     }
 }
 
 
 @media (min-width: 1200px) {
     .recipe-article {
-    
-        &__content {    
-            .img-cntr {
-                height: 300px;
-            } 
-        }
+        max-width: 540px;
+        // .recipe-slide__content {
+        //     .image-cntr {
+        //         height: 300px;
+        //     } 
+        // }
     }
 }
