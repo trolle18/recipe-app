@@ -3,37 +3,36 @@ import { IoHeart } from "react-icons/io5";
 
 export default function FavoriteBtn( {recipe} ) {
 
-
     function addFav() {
-        // Parse the JSON stored in all Favorites
-        var favorites = JSON.parse(localStorage.getItem("favorites")); 
-        if(favorites == null) favorites = [];        
+        
+        var favorites = JSON.parse(localStorage.getItem("favorites")); // Parse the JSON stored in all Favorites
+        if(favorites == null) favorites = []; // Create array, if it doesnt excist  
         var id = document.getElementById(recipe.id).value;
         var title = document.getElementById(recipe.title).value;
         var image = document.getElementById(recipe.image).value;
+        var readyInMinutes = document.getElementById(recipe.readyInMinutes);
+        var servings = document.getElementById(recipe.servings);
+        var diets = document.getElementById(recipe.diets);
 
         function checkReady() {
-            const readyInMinutes = document.getElementById(recipe.readyInMinutes);
             if(readyInMinutes) {
                 return readyInMinutes
             } else {
-                return null
+                return ("")
             }
         }
         function checkServings() {
-            const servings = document.getElementById(recipe.servings);
             if(servings) {
                 return servings
             } else {
-                return null
+                return ("")
             }
         }
         function checkDiets() {
-            const diets = document.getElementById(recipe.diets);
             if(diets) {
                 return diets
             } else {
-                return null
+                return ("")
             }
         }
 
@@ -45,20 +44,42 @@ export default function FavoriteBtn( {recipe} ) {
             "servings": checkServings,
             "diets": checkDiets
         };
-        // const isFav = localStorage.getItem(favRecipe)
-        // if (isFav) {
-        // }
-        // else {
-            favorites.push(favRecipe);
-            localStorage.setItem("favorites", JSON.stringify(favorites));
-        // }
-    };
+
+        localStorage.setItem('recipe', JSON.stringify(favRecipe))
+        favorites.push(favRecipe);
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+    }
+
+
+    // function toggleFavorite() {
+    //     // let present = false ;
+
+    //     // favorites.map(val => {
+    //     //     if(JSON.stringify( {...val})===JSON.stringify({...favRecipe}) )
+    //     //     present = true;
+    //     // })
+    //     // if(present) {
+    //         // console.log("The object is present => Removed")
+    //         // localStorage.getItem('recipe', JSON.stringify(favRecipe))     
+    //     // } 
+    //     // if(!present) {
+    //     //     console.log("The object is not present => Set")
+    //         localStorage.setItem('recipe', JSON.stringify(favRecipe))
+    //     // }
+
+    //     favorites.push(favRecipe);
+    //     localStorage.setItem("favorites", JSON.stringify(favorites));
+    // }
+    
 
     function handleSubmit(e) {
         e.preventDefault();
         addFav();
-        console.log(localStorage.getItem("favorites"));
+        // toggleFavorite();
     }
+
+    
+    
 
 
     return (
@@ -76,7 +97,7 @@ export default function FavoriteBtn( {recipe} ) {
             <button 
             id="submit"
             type="submit"
-            className="fav-btn" 
+            className="fav-btn disabled" 
             >
                 <IoHeart/>
             </button>

@@ -27,13 +27,10 @@ export default function BurgerMenu() {
   
   const button = document.getElementById("menu-btn");
   const y = document.getElementById("dropdown");
-  // const navOverflow = document.getElementById("nav-overflow");
   const body = document.body;
 
   // OPEN BURGER MENU
   const openMenu = () => {
-    // const button = document.getElementById("menu-btn");
-    // const y = document.getElementById("dropdown");
     button.classList.toggle("change");
     if (y.classList.contains("hidden")) {
       y.classList.remove("hidden");
