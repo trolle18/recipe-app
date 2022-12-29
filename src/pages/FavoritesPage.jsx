@@ -28,34 +28,38 @@ export default function FavoritesPage() {
     return (
         <>
         <SmallNav/>
-        <section className="cuisine page-section">
-            <h1>Favorites</h1>
+        <section className="page">
+            <section className=" page-section">
+                <h1>Favorites</h1>
 
-            <div className="searchbar-cntr">
-            <div className="searchbar">
-                <FaSearch/>
-                <input 
-                type="text" 
-                placeholder='Search favorites...'
-                onChange={(e) => setSearchValue(e.target.value.toLowerCase())} 
-                />
+                <div className="searchbar-cntr">
+                <div className="searchbar">
+                    <FaSearch/>
+                    <input 
+                    type="text" 
+                    placeholder='Search favorites...'
+                    onChange={(e) => setSearchValue(e.target.value.toLowerCase())} 
+                    />
+                </div>
             </div>
-        </div>
+            </section>
+            <section className=" page-section">
 
-            <motion.div className="flex-grid" 
-                animate={{opacity: 1}}
-                initial={{opacity: 0}}
-                exit={{opacity: 0}}
-                transition={{duration: 0.5}}>
+                <motion.div className="flex-grid" 
+                    animate={{opacity: 1}}
+                    initial={{opacity: 0}}
+                    exit={{opacity: 0}}
+                    transition={{duration: 0.5}}>
 
-                {favorites
-                .filter((recipe) => recipe.title.toLowerCase().startsWith(searchValue) || recipe.diets.toLowerCase().startsWith(searchValue))
-                .map((recipe) => {
-                    return (
-                        <RecipeArticle recipe={recipe} key={recipe.id}/>
-                    )
-                })}
-            </motion.div>
+                    {favorites
+                    .filter((recipe) => recipe.title.toLowerCase().startsWith(searchValue) || recipe.diets.toLowerCase().startsWith(searchValue))
+                    .map((recipe) => {
+                        return (
+                            <RecipeArticle recipe={recipe} key={recipe.id}/>
+                        )
+                    })}
+                </motion.div>
+            </section>
         </section>
         </>
     )
