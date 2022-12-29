@@ -1,22 +1,21 @@
 /* --------- PAGE ---------- */
 .page {
+    // border: solid blue 1px;
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     margin: 8rem 0rem 10rem 0rem;
-    padding: 0 1em;
-    position: relative;
-    // display: grid;
-    // grid-template-columns: 1fr;
-    // justify-content: center;
-    // overflow: hidden;
+    display: flex; 
+    flex-direction: column; 
 }
 
-
 .page-section {
+    // border: solid blue 1px;
     height: auto;
     width: 100%;
     margin: 0 auto;
-    padding: 0 0 8em 0;
+    padding: 0 1em 8em 1em;
+    display: block;
+    flex: 1;
 
     h1 {
         margin: .5em 0;
@@ -46,7 +45,7 @@
 .page-section-right {
     margin: 0 1rem 0 .25rem;
     float: right;
-    border: solid blue 1px;
+    // border: solid blue 1px;
 }
 
 .cuisine {
