@@ -50,34 +50,34 @@ export default function FavoriteBtn( {recipe} ) {
         localStorage.setItem("favorites", JSON.stringify(favorites));
 
 
-            function toggleFav() {
-                let present = false ;
+        const toggleFav = () => {
+            let present = false ;
 
-                favorites.map(val => {
-                    if(JSON.stringify( {...val})===JSON.stringify({...favRecipe}) )
-                    present = true;
-                })
+            favorites.map(val => {
+                if(JSON.stringify( {...val})===JSON.stringify({...favRecipe}) )
+                present = true;
+            })
 
-                const favBtn = document.getElementById("heartIcon")
-                // const submit = document.getElementById("submit")
-                if(present) {
-                    console.log("The recipe is saved")
-                    favBtn.classList.add("active")
-                    favBtn.classList.remove("disabled")
+            const favBtn = document.getElementById("heartIcon")
+            // const submit = document.getElementById("submit")
+            if(present) {
+                console.log("The recipe is saved")
+                favBtn.classList.add("active")
+                favBtn.classList.remove("disabled")
+                // submit.classList.add("active")
+                // submit.classList.remove("disabled")
+            } 
+            if (!present) {
+                console.log("The recipe is not saved")            
+                favBtn.classList.add("disabled")
+                favBtn.classList.remove("active")
+            } else {
+                favBtn.classList.add("disabled")
+                favBtn.classList.remove("active")
+            } 
+        }
 
-                    // submit.classList.add("active")
-                    // submit.classList.remove("disabled")
-                } 
-                if (!present) {
-                    console.log("The recipe is not saved")            
-                    favBtn.classList.add("disabled")
-                    favBtn.classList.remove("active")
-
-                    // submit.classList.add("disabled")
-                    // submit.classList.remove("active")
-                } 
-            }
-            toggleFav()
+        toggleFav()
 
     }
 

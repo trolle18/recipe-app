@@ -17,6 +17,12 @@
         height: 1.5em;
         width: 1.5em;
         // color: $clr_d_grey; 
+        &.active {
+            color: $clr_red-orange;
+        }
+        &.disabled {
+            color: $clr_d_grey;
+        }
     }
 
     &:hover {
@@ -37,7 +43,7 @@
     svg {
         color: $clr_d_grey; 
         &.disabled {
-            color: $clr_red-orange;
+            color: $clr_d_grey;
         }
     }
 }
