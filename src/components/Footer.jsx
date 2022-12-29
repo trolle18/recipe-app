@@ -10,47 +10,29 @@ export default function Footer() {
         <footer>
             <section className="footer-section">
                 <Link to={"/"} className="category-link main-link">
-                    <h1>
-                        <GiKnifeFork/>
-                        Recipes
-                    </h1>                   
+                    <h1><GiKnifeFork/> Recipes</h1>                   
                 </Link>
             </section>  
 
             <section  className="footer-section subsec">
                 <NavLink to={'/cuisine/italian'} className="category-link">
-                   <h4>
-                        <FaPizzaSlice/>
-                        Italian
-                    </h4>
+                   <h4><FaPizzaSlice/> Italian</h4>
                 </NavLink>
 
                 <NavLink to={'/cuisine/american'} className="category-link">
-                    <h4>
-                        <FaHamburger/>
-                        American
-                    </h4>
+                    <h4><FaHamburger/> American</h4>
                 </NavLink>
 
                 <NavLink to={'/cuisine/thai'} className="category-link">
-                    <h4>
-                        <GiNoodles/>
-                        Thai
-                    </h4>
+                    <h4><GiNoodles/> Thai</h4>
                 </NavLink>
 
                 <NavLink to={'/cuisine/japanese'} className="category-link">
-                   <h4>
-                        <GiSushis/>
-                        Japanese
-                    </h4>
+                   <h4><GiSushis/> Japanese</h4>
                 </NavLink>
 
                 <NavLink to={'/favorites'} className="category-link">
-                    <h4>
-                        <IoHeart/> 
-                        Favorites
-                    </h4>
+                    <h4><IoHeart/> Favorites</h4>
                 </NavLink>       
             </section>
         </footer>
