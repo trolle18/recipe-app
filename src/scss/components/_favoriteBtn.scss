@@ -16,7 +16,7 @@
     svg {
         height: 1.5em;
         width: 1.5em;
-        color: $clr_d_grey; 
+        // color: $clr_d_grey; 
     }
 
     &:hover {
@@ -28,6 +28,24 @@
 
     &:active {
         svg {
+            color: $clr_red-orange;
+        }
+    }
+}
+
+.fav-btn.diabled {
+    svg {
+        color: $clr_d_grey; 
+        &.disabled {
+            color: $clr_red-orange;
+        }
+    }
+}
+
+.fav-btn.active {
+    svg {
+        color: $clr_red-orange;
+        &.active {
             color: $clr_red-orange;
         }
     }

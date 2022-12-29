@@ -1,10 +1,9 @@
 import { IoHeart } from "react-icons/io5";
 
 
-export default function FavoriteBtn( {recipe} ) {
+export default function FavoriteBtn( {recipe} ) {   
 
-    function addFav() {
-        
+    function addFav() {        
         var favorites = JSON.parse(localStorage.getItem("favorites")); // Parse the JSON stored in all Favorites
         if(favorites == null) favorites = []; // Create array, if it doesnt excist  
         var id = document.getElementById(recipe.id).value;
@@ -45,37 +44,47 @@ export default function FavoriteBtn( {recipe} ) {
             "diets": checkDiets
         };
 
+        
         localStorage.setItem('recipe', JSON.stringify(favRecipe))
         favorites.push(favRecipe);
         localStorage.setItem("favorites", JSON.stringify(favorites));
+
+
+            function toggleFav() {
+                let present = false ;
+
+                favorites.map(val => {
+                    if(JSON.stringify( {...val})===JSON.stringify({...favRecipe}) )
+                    present = true;
+                })
+
+                const favBtn = document.getElementById("heartIcon")
+                // const submit = document.getElementById("submit")
+                if(present) {
+                    console.log("The recipe is saved")
+                    favBtn.classList.add("active")
+                    favBtn.classList.remove("disabled")
+
+                    // submit.classList.add("active")
+                    // submit.classList.remove("disabled")
+                } 
+                if (!present) {
+                    console.log("The recipe is not saved")            
+                    favBtn.classList.add("disabled")
+                    favBtn.classList.remove("active")
+
+                    // submit.classList.add("disabled")
+                    // submit.classList.remove("active")
+                } 
+            }
+            toggleFav()
+
     }
 
-
-    // function toggleFavorite() {
-    //     // let present = false ;
-
-    //     // favorites.map(val => {
-    //     //     if(JSON.stringify( {...val})===JSON.stringify({...favRecipe}) )
-    //     //     present = true;
-    //     // })
-    //     // if(present) {
-    //         // console.log("The object is present => Removed")
-    //         // localStorage.getItem('recipe', JSON.stringify(favRecipe))     
-    //     // } 
-    //     // if(!present) {
-    //     //     console.log("The object is not present => Set")
-    //         localStorage.setItem('recipe', JSON.stringify(favRecipe))
-    //     // }
-
-    //     favorites.push(favRecipe);
-    //     localStorage.setItem("favorites", JSON.stringify(favorites));
-    // }
-    
 
     function handleSubmit(e) {
         e.preventDefault();
         addFav();
-        // toggleFavorite();
     }
 
     
@@ -97,9 +106,10 @@ export default function FavoriteBtn( {recipe} ) {
             <button 
             id="submit"
             type="submit"
-            className="fav-btn disabled" 
+            className="fav-btn disabled"
+            // className="fav-btn disabled" 
             >
-                <IoHeart/>
+                <IoHeart id="heartIcon" className="disabled"/>
             </button>
         </form>
         </>
