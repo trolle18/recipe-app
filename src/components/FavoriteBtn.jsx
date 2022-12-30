@@ -3,9 +3,9 @@ import { IoHeart } from "react-icons/io5";
 
 export default function FavoriteBtn( {recipe} ) {   
 
-    function deleteItem(present) {
+    function deleteItem(index) {
         var favorites = JSON.parse(localStorage.getItem("favorites"));
-        favorites.splice(present, 1);        
+        favorites.splice(index, 1);        
         // console.log(favorites)
     }
 
@@ -60,27 +60,23 @@ export default function FavoriteBtn( {recipe} ) {
                 if(JSON.stringify( {...val})===JSON.stringify({...favRecipe}) )
                 present = true;
             })
-            
-            if((present = true)) {
-                // present = true
-                deleteItem(present)
-                favorites.push(favRecipe);
+
+            if(present) {
                 favBtn.classList.remove("disabled")
                 favBtn.classList.add("active")
+                deleteItem()
+                // favorites.push(favRecipe)                
                 console.log("The recipe was removed")
-            }
-            if (!present) {
-                // present = false
-                
+            }            
+            if (!present) {                
                 favBtn.classList.add("disabled")
                 favBtn.classList.remove("active")
-
                 localStorage.setItem('recipe', JSON.stringify(favRecipe))
                 favorites.push(favRecipe)
-                localStorage.setItem("favorites", JSON.stringify(favorites))
-                
+                localStorage.setItem("favorites", JSON.stringify(favorites))                
                 console.log("The recipe is saved")
             }
+            
         }
         toggleFav()
         
