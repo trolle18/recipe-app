@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import SmallNav from '../components/SmallNav';
 // import CuisineCard from '../components/CuisineCard';
 import RecipeSlide from '../components/RecipeSlide';
+import Footer from '../components/Footer';
 
 
 export default function CuisinePage() {
@@ -45,6 +46,7 @@ export default function CuisinePage() {
                     )
                 })}
             </motion.div>
+            <Footer/>
         </section>
         </>
     )

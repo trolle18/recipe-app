@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from "react-router-dom";
+import Footer from '../components/Footer';
 import SmallNav from '../components/SmallNav';
 
 export default function SearchedPage() {
@@ -44,7 +45,9 @@ export default function SearchedPage() {
                     )
                 })}
             </section>
+            <Footer/>
         </section>
+       
         </>
     )
 };

@@ -2,7 +2,6 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import SmallNav from '../components/SmallNav';
-import RecipeSlide from '../components/RecipeSlide';
 import { FaSearch } from 'react-icons/fa';
 import RecipeArticle from '../components/RecipeArticle';
 import Footer from '../components/Footer';
@@ -29,22 +28,20 @@ export default function FavoritesPage() {
     return (
         <>
         <SmallNav/>
-        <section className="page">
+        <section className="subpage">
             <section className=" page-section">
                 <h1>Favorites</h1>
 
                 <div className="searchbar-cntr">
-                <div className="searchbar">
-                    <FaSearch/>
-                    <input 
-                    type="text" 
-                    placeholder='Search favorites...'
-                    onChange={(e) => setSearchValue(e.target.value.toLowerCase())} 
-                    />
+                    <div className="searchbar">
+                        <FaSearch/>
+                        <input 
+                        type="text" 
+                        placeholder='Search favorites...'
+                        onChange={(e) => setSearchValue(e.target.value.toLowerCase())} 
+                        />
+                    </div>
                 </div>
-            </div>
-            {/* </section>
-            <section className=" page-section"> */}
 
                 <motion.div className="flex-grid" 
                     animate={{opacity: 1}}
