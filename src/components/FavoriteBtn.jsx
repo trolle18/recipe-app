@@ -7,6 +7,7 @@ export default function FavoriteBtn( {recipe} ) {
         var favorites = JSON.parse(localStorage.getItem("favorites"));
         favorites.splice(index, 1);
         localStorage.setItem("favorites", JSON.stringify(favorites));
+        console.log(favorites)
     }
 
     function addFav() {        
@@ -76,7 +77,7 @@ export default function FavoriteBtn( {recipe} ) {
                 favorites.push(favRecipe);
 
                 console.log("The recipe was removed")
-                console.log({favorites})
+                // console.log({favorites})
 
                 favBtn.classList.add("active")
                 favBtn.classList.remove("disabled")
