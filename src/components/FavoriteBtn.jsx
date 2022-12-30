@@ -6,7 +6,8 @@ export default function FavoriteBtn( {recipe} ) {
     function deleteItem(index) {
         var favorites = JSON.parse(localStorage.getItem("favorites"));
         favorites.splice(index, 1);
-        localStorage.setItem("favorites", JSON.stringify(favorites));
+        // localStorage.setItem("favorites", JSON.stringify(favorites));
+        
         console.log(favorites)
     }
 
@@ -74,7 +75,7 @@ export default function FavoriteBtn( {recipe} ) {
             
             if(present) {
                 deleteItem()
-                favorites.push(favRecipe);
+                // favorites.push(favRecipe);
 
                 console.log("The recipe was removed")
                 // console.log({favorites})
@@ -91,13 +92,13 @@ export default function FavoriteBtn( {recipe} ) {
                 favorites.push(favRecipe);
                 localStorage.setItem("favorites", JSON.stringify(favorites));
             } 
-            else {
-                favBtn.classList.add("disabled")
-                favBtn.classList.remove("active")
-                localStorage.setItem('recipe', JSON.stringify(favRecipe))
-                favorites.push(favRecipe);
-                localStorage.setItem("favorites", JSON.stringify(favorites));
-            } 
+            // else {
+            //     favBtn.classList.add("disabled")
+            //     favBtn.classList.remove("active")
+            //     localStorage.setItem('recipe', JSON.stringify(favRecipe))
+            //     favorites.push(favRecipe);
+            //     localStorage.setItem("favorites", JSON.stringify(favorites));
+            // } 
         }
         toggleFav()
         
