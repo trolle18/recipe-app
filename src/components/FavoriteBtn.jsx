@@ -3,12 +3,10 @@ import { IoHeart } from "react-icons/io5";
 
 export default function FavoriteBtn( {recipe} ) {   
 
-    function deleteItem(index) {
+    function deleteItem(present) {
         var favorites = JSON.parse(localStorage.getItem("favorites"));
-        favorites.splice(index, 1);
-        // localStorage.setItem("favorites", JSON.stringify(favorites));
-        
-        console.log(favorites)
+        favorites.splice(present, 1);        
+        // console.log(favorites)
     }
 
     function addFav() {        
@@ -53,16 +51,6 @@ export default function FavoriteBtn( {recipe} ) {
             "diets": checkDiets
         };
 
-        // function deleteItem(index) {
-        //     const favorites = JSON.parse(localStorage.getItem("favorites"));
-        //     favorites.splice(index, 1);
-        //     localStorage.setItem("favorites", JSON.stringify(favorites));
-        // }
-          
-        // localStorage.setItem('recipe', JSON.stringify(favRecipe))
-        // favorites.push(favRecipe);
-        // localStorage.setItem("favorites", JSON.stringify(favorites));
-
 
         const toggleFav = () => {
             const favBtn = document.getElementById("heartIcon")
@@ -73,32 +61,26 @@ export default function FavoriteBtn( {recipe} ) {
                 present = true;
             })
             
-            if(present) {
-                deleteItem()
-                // favorites.push(favRecipe);
-
-                console.log("The recipe was removed")
-                // console.log({favorites})
-
-                favBtn.classList.add("active")
+            if((present = true)) {
+                // present = true
+                deleteItem(present)
+                favorites.push(favRecipe);
                 favBtn.classList.remove("disabled")
-                
-            } 
+                favBtn.classList.add("active")
+                console.log("The recipe was removed")
+            }
             if (!present) {
-                console.log("The recipe is saved")            
+                // present = false
+                
                 favBtn.classList.add("disabled")
                 favBtn.classList.remove("active")
+
                 localStorage.setItem('recipe', JSON.stringify(favRecipe))
-                favorites.push(favRecipe);
-                localStorage.setItem("favorites", JSON.stringify(favorites));
-            } 
-            // else {
-            //     favBtn.classList.add("disabled")
-            //     favBtn.classList.remove("active")
-            //     localStorage.setItem('recipe', JSON.stringify(favRecipe))
-            //     favorites.push(favRecipe);
-            //     localStorage.setItem("favorites", JSON.stringify(favorites));
-            // } 
+                favorites.push(favRecipe)
+                localStorage.setItem("favorites", JSON.stringify(favorites))
+                
+                console.log("The recipe is saved")
+            }
         }
         toggleFav()
         
