@@ -1,26 +1,11 @@
 import { IoHeart } from "react-icons/io5";
 
 
-export default function FavoriteBtn( {recipe} ) {   
-    // const favorites = JSON.parse(localStorage.getItem("favorites"));
-
-    function deleteItem(index) {
-        var favorites = JSON.parse(localStorage.getItem("favorites"));
-        favorites.splice(index, 1);
-        localStorage.setItem("favorites", JSON.stringify(favorites));
-    }
-
-    // function saveItem() {
-    //     const favorites = JSON.parse(localStorage.getItem("favorites"));
-    //             localStorage.setItem('recipe', JSON.stringify(favRecipe))
-    //     favorites.push(favRecipe);
-    //     localStorage.setItem("favorites", JSON.stringify(favorites));
-    // }
+export default function FavoriteRemoveBtn( {recipe} ) {   
 
     function addFav() {        
         var favorites = JSON.parse(localStorage.getItem("favorites")); // Parse the JSON stored in all Favorites
         if(favorites == null) favorites = []; // Create array, if it doesnt excist  
-
         var id = document.getElementById(recipe.id).value;
         var title = document.getElementById(recipe.title).value;
         var image = document.getElementById(recipe.image).value;
@@ -59,58 +44,46 @@ export default function FavoriteBtn( {recipe} ) {
             "diets": checkDiets
         };
 
-        // function deleteItem(index) {
-        //     const favorites = JSON.parse(localStorage.getItem("favorites"));
-        //     favorites.splice(index, 1);
-        //     localStorage.setItem("favorites", JSON.stringify(favorites));
-        // }
-          
-        // localStorage.setItem('recipe', JSON.stringify(favRecipe))
-        // favorites.push(favRecipe);
-        // localStorage.setItem("favorites", JSON.stringify(favorites));
 
 
         const toggleFav = () => {
-            const favBtn = document.getElementById("heartIcon")
-            let present = false ;
-
+            
+            let present = false;
             favorites.map(val => {
                 if(JSON.stringify( {...val})===JSON.stringify({...favRecipe}) )
                 present = true;
             })
-            
+
+            const favBtn = document.getElementById("heartIcon")
             if(present) {
-                // present = true;
-                deleteItem()
-                // favorites.splice(index, 1);
-                // localStorage.setItem("favorites", JSON.stringify(favorites));
-                favorites.push(favRecipe);
-                console.log("The recipe was removed")
+                localStorage.getItem('recipe', JSON.stringify(favRecipe))
+                console.log("The recipe is already saved")
                 favBtn.classList.add("active")
                 favBtn.classList.remove("disabled")
-                
+                present = true;
             } 
             if (!present) {
-                console.log("The recipe is saved")            
-                favBtn.classList.add("disabled")
-                favBtn.classList.remove("active")
                 localStorage.setItem('recipe', JSON.stringify(favRecipe))
                 favorites.push(favRecipe);
-                localStorage.setItem("favorites", JSON.stringify(favorites));
-            } 
-            else {
+
+                console.log("The recipe was not saved")            
                 favBtn.classList.add("disabled")
                 favBtn.classList.remove("active")
+                present = false;
+            } else {
                 localStorage.setItem('recipe', JSON.stringify(favRecipe))
                 favorites.push(favRecipe);
-                localStorage.setItem("favorites", JSON.stringify(favorites));
+
+                favBtn.classList.add("disabled")
+                favBtn.classList.remove("active")
+                present = false;
             } 
         }
-        toggleFav()
-        
-    }
 
-   
+        toggleFav()        
+        // localStorage.setItem("favorites", JSON.stringify(favorites));
+
+    }
 
 
     function handleSubmit(e) {
@@ -137,10 +110,10 @@ export default function FavoriteBtn( {recipe} ) {
             <button 
             id="submit"
             type="submit"
-            className="fav-btn disabled"
+            className="fav-btn active"
             // className="fav-btn disabled" 
             >
-                <IoHeart id="heartIcon" className="disabled"/>
+                <IoHeart id="heartIcon" className="active"/>
             </button>
         </form>
         </>
