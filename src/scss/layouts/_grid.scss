@@ -1,0 +1,85 @@
+/* --------- Grid ---------- */
+.grid-cntr {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 1em;
+    column-gap: 1em;
+}
+.grid {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-gap: 3rem;
+}
+
+.flex-grid {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1em;
+}
+// @media (min-width: 500px) {
+//     .flex-grid {
+//         // gap: 2em;
+//         // justify-content: space-between;
+//     }
+// }
+
+// @media (min-width: 500px) {
+//     .flex-grid {
+//         // gap: 2em;
+//         justify-content: space-between;
+//     }
+// }
+
+// @media (min-width: 450px) {
+//     .flex-grid {
+//         margin: 0 auto;
+//         display: grid;
+//         grid-template-columns: repeat(auto-fit, minmax(auto, 1fr));
+//         grid-gap: 3rem;
+//     }
+// }
+
+.cuisine {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        grid-gap: 3rem;
+
+        .slide-cntr {
+            &__inner-cntr {
+                img {
+                    width: 100%;
+                    border-radius: 2rem;
+                }
+    
+                a {
+                    text-decoration: none;
+                }
+    
+                h4 {
+                    text-align: center;
+                }
+            }
+        }
+
+        .card {
+            img {
+                width: 100%;
+                border-radius: 2rem;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            h4 {
+                text-align: center;
+            }
+        }
+    }
+}

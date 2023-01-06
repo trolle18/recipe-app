@@ -1,5 +1,5 @@
 import { FaPizzaSlice, FaHamburger } from 'react-icons/fa';
-import { GiNoodles, GiChopsticks } from 'react-icons/gi';
+import { GiNoodles, GiSushis } from 'react-icons/gi';
 import { NavLink } from 'react-router-dom';
 
 
@@ -7,29 +7,7 @@ export default function Categories() {
 
     return (
         <>
-            {/* <section className='categories'>
-                <NavLink to={'/'} className="category-test">
-                    <FaPizzaSlice/>
-                    <h4>test</h4>
-                </NavLink>
-
-                <NavLink to={'/'} className="category-test">
-                    <FaHamburger/>
-                    <h4>test</h4>
-                </NavLink>
-
-                <NavLink to={'/'} className="category-test">
-                    <GiNoodles/>
-                    <h4>test</h4>
-                </NavLink>
-
-                <NavLink to={'/'} className="category-test">
-                    <GiChopsticks/>
-                    <h4>test</h4>
-                </NavLink>
-            </section> */}
-
-            <section className='categories'>
+            {/* <section className='categories'> */}
                 <NavLink to={'/cuisine/italian'} className="category-link">
                     <FaPizzaSlice/>
                     <h4>Italian</h4>
@@ -46,10 +24,10 @@ export default function Categories() {
                 </NavLink>
 
                 <NavLink to={'/cuisine/japanese'} className="category-link">
-                    <GiChopsticks/>
+                    <GiSushis/>
                     <h4>Japanese</h4>
                 </NavLink>
-            </section>
+            {/* </section> */}
         </>
     )
 };

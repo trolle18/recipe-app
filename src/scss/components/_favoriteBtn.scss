@@ -1,0 +1,60 @@
+
+.fav-btn {
+    height: 2.5em;
+    width: 2.5em;
+    padding: .5em;
+    border-radius: 2em;
+    border: none;
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    background-color: $clr_white;
+    box-shadow: rgb(0, 0, 0, .06) 0px 0px 0.125rem 2px;
+    cursor: pointer;
+    transition: $ease_in_005;
+
+    svg {
+        height: 1.5em;
+        width: 1.5em;
+        // color: $clr_d_grey; 
+        &.active {
+            color: $clr_red-orange;
+        }
+        &.disabled {
+            color: $clr_d_grey;
+        }
+    }
+
+    &:hover {
+        box-shadow: rgb(0, 0, 0, .06) 0px 0px 0.15rem 4px;
+        svg {
+            color: $clr_red-orange;; 
+        }
+    }
+
+    &:active {
+        svg {
+            color: $clr_red-orange;
+        }
+    }
+}
+
+.fav-btn.diabled {
+    svg {
+        color: $clr_d_grey; 
+        &.disabled {
+            color: $clr_d_grey;
+        }
+    }
+}
+
+.fav-btn.active {
+    svg {
+        color: $clr_red-orange;
+        &.active {
+            color: $clr_red-orange;
+        }
+    }
+}
+
+

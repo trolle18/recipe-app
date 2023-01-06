@@ -1,0 +1,113 @@
+/* ----- Categories ----- */
+.categories {
+    width: 100%;
+    margin: 1rem auto .5rem auto;
+    display: flex;
+    justify-content: space-between;
+
+    .category-link {
+        width: 4rem;
+        height: 4rem;
+        padding: 0 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: $clr_black;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none; 
+        transition: $ease_in_005;
+        
+        &:hover {
+            background-color: $clr_red_orange;
+        }
+
+        .active {
+            background-color: $clr_red_orange;
+        }
+
+        h4 {
+            margin: 2px 0px 0px 0px;
+            color: $clr_white;
+            font-size: 0.6em;
+        }
+
+        svg {
+            height: 1.6rem;
+            width: auto;
+            color: $clr_white;
+        }
+    }
+
+    .fav-btn.cat-sub-link {
+        height: auto;
+        width: auto;
+        margin: .75em 0 0 0;
+        padding: 0em 0em;
+        flex-direction: row;
+        gap: .25em;
+        box-shadow: rgb(0, 0, 0, 0) 0px 0px 0px 0px;
+    
+        svg {
+            display: block;
+            height: $fs_p_sm;
+            width: $fs_p_sm;
+            color: $clr_black;
+        }
+        span {
+            font-size: $fs_p_small;
+            font-weight: 600;
+            color: $clr_black;
+        }
+    
+        &:hover {
+            box-shadow: rgb(0, 0, 0, 0) 0px 0px 0px 0px;
+            svg {
+                color: $clr_red_orange
+            }
+            span {
+                color: $clr_red_orange;
+            }
+        }
+    
+        &:active {
+            span {
+                color: $clr_red_orange;
+            }
+        }
+    }
+}
+
+@media (min-width: 600px) {
+    .categories {
+        width: 100%;
+        margin: 2rem auto 1rem auto;
+    
+        .category-link {
+            width: 5rem;
+            height: 5rem;
+    
+            svg {
+                height: 1.8rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .categories {
+        width: 100%;
+        margin: 2rem auto 1rem auto;
+    
+        .category-link {
+            width: 5rem;
+            height: 5rem;
+    
+            svg {
+                height: 1.8rem;
+            }
+        }
+    }
+}
